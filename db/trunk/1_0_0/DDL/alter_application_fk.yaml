@@ -1,0 +1,31 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  addForeignKey-FK_Application_Status
+     author:  Ananda 
+     changes:  
+     -  addForeignKeyConstraint:
+          baseColumnNames:  StatusId  
+          baseTableName:  Application  
+          baseTableSchemaName:  dbo
+          constraintName:  FK_Application_StatusId  
+          onDelete:  "CASCADE"  
+          onUpdate:  "CASCADE" 
+          referencedColumnNames:  StatusId 
+          referencedTableName:  Status 
+          referencedTableSchemaName:  dbo
+          validate:  false
+-  changeSet:  
+     id:  addForeignKey-FK_Application_Phase
+     author:  Ananda 
+     changes:  
+     -  addForeignKeyConstraint:
+          baseColumnNames:  PhaseId  
+          baseTableName:  Application  
+          baseTableSchemaName:  dbo
+          constraintName:  FK_Application_PhaseId  
+          onDelete:  "CASCADE"  
+          onUpdate:  "CASCADE" 
+          referencedColumnNames:  PhaseId 
+          referencedTableName:  Phase 
+          referencedTableSchemaName:  dbo
+          validate:  false

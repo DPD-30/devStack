@@ -1,0 +1,8 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  delete-Status  
+     author:  Ananda  
+     changes:  
+     -  delete:  
+          schemaName:    dbo
+          tableName: Status

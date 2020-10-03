@@ -1,0 +1,13 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  alterTable-User  
+     author:  Ananda  
+     changes:  
+     -  addColumn:  
+          tableName:   User  
+          columns:  
+            -  column:  
+                 name:  Email  
+                 type:  nvarchar(255)
+                 constraints:
+                   nullable: true

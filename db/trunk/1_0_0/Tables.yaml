@@ -1,0 +1,36 @@
+databaseChangeLog:
+- changeSet:
+    id: create_tables
+    author: Ananda
+    comment: "Creating Tables Required for the Application"
+    changes:
+        - tagDatabase:
+            tag: ddl
+- include:
+    id: ddl
+    author: Ananda
+    file: DDL/create_appsettings.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Ananda
+    file: DDL/create_UserType.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Martin
+    file: DDL/create_role.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Martin
+    file: DDL/create_user.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Martin
+    file: DDL/create_userrole.yaml
+    relativeToChangelogFile: true
+
+
+    

@@ -1,0 +1,57 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  loadData-application 
+     author:  Ananda  
+     changes:  
+     -  loadData:  
+          catalogName:     
+          columns:  
+            -  column:  
+                 header:  ApplicationName  
+                 name:  ApplicationName
+                 type: String
+            -  column:  
+                 header:  StatusId  
+                 name:  StatusId
+                 type: Numeric
+            -  column:  
+                 header:  SystemOwner  
+                 name:  SystemOwner
+                 type: String
+            -  column:  
+                 header:  IMatrixNumber  
+                 name:  IMatrixNumber
+                 type: Numeric
+            -  column:  
+                 header:  PhaseId  
+                 name:  PhaseId
+                 type: Numeric
+            -  column:  
+                 header:  POC  
+                 name:  POC
+                 type: String
+            -  column:  
+                 header:  IsActive  
+                 name:  IsActive
+                 type: BOOLEAN
+            -  column:  
+                 header:  IsApproved  
+                 name:  IsApproved
+                 type: BOOLEAN
+            -  column:  
+                 header:  CreatedUser  
+                 name:  CreatedUser
+                 type: String
+            -  column:  
+                 header:  ModifiedUser  
+                 name:  ModifiedUser
+                 type: String
+          commentLineStartsWith:   //   
+          encoding:  UTF-8    
+          file:  1_0_0/Data/application_csv.csv   
+          quotchar:  ''''    
+          relativeToChangelogFile:  false    
+          schemaName:  dbo    
+          separator:  ;    
+          tableName:  Application    
+          usePreparedStatements:  true

@@ -1,0 +1,13 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  update-Status  
+     author:  Ananda  
+     changes:  
+     -  update:  
+          columns:  
+            -  column:  
+                name:  IsActive  
+                value:  false  
+          schemaName:  dbo  
+          tableName:  Status  
+          where:  name='Expired'

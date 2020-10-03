@@ -1,0 +1,61 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  createTable-Role  
+     author:  Martin  
+     changes:  
+     -  createTable:  
+          tableName:   Role  
+          columns:  
+            - column:  
+                 name:  RoleId  
+                 type:  int identity(1,1)
+                 autoIncrement: true
+                 constraints:
+                   nullable: false  
+            -  column:  
+                 name:  RoleTitle
+                 type:  nvarchar(50)
+                 constraints:
+                   nullable: false  
+            -  column:  
+                 name:  Description
+                 type:  nvarchar(100)
+                 constraints:
+                   nullable: false 
+            - column:  
+                 name:  IsActive
+                 type:  bit 
+                 constraints:
+                   nullable: false
+            -  column:  
+                 name:  CreatedDate
+                 type:  DateTime
+                 constraints:
+                   nullable: false 
+            -  column:  
+                 name:  CreatedUser
+                 type:  nvarchar(50)
+                 constraints:
+                   nullable: false 
+            -  column:  
+                 name:  ModifiedDate
+                 type:  DateTime
+                 constraints:
+                   nullable: true
+            -  column:  
+                 name:  ModifiedUser
+                 type:  nvarchar(50)
+                 constraints:
+                   nullable: true
+          schemaName:  dbo
+-  changeSet:  
+     id:  addPrimaryKey-RoleId  
+     author:  Ananda
+     changes:  
+     -  addPrimaryKey:  
+         clustered:  true  
+         columnNames:  RoleId 
+         constraintName:  PK_RoleId  
+         schemaName:  dbo
+         tableName:  Role
+         validate:  true

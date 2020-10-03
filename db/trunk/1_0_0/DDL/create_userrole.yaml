@@ -1,0 +1,92 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  createTable-UserRole  
+     author:  Martin  
+     changes:  
+     -  createTable:  
+          tableName:   UserRole  
+          columns:  
+            - column:  
+                 name:  UserRoleId  
+                 type:  int identity(1,1)
+                 autoIncrement: true
+                 constraints:
+                   nullable: false  
+            -  column:  
+                 name:  UserId
+                 type:  int
+                 constraints:
+                   nullable: false  
+            -  column:  
+                 name:  RoleId
+                 type:  int
+                 constraints:
+                   nullable: false 
+            -  column:  
+                 name:  IsActive
+                 type:  int
+                 constraints:
+                   nullable: false 
+            -  column:  
+                 name:  CreatedDate
+                 type:  DateTime
+                 constraints:
+                   nullable: false 
+            -  column:  
+                 name:  CreatedUser
+                 type:  nvarchar(50)
+                 constraints:
+                   nullable: false 
+            -  column:  
+                 name:  ModifiedDate
+                 type:  DateTime
+                 constraints:
+                   nullable: true
+            -  column:  
+                 name:  ModifiedUser
+                 type:  nvarchar(50)
+                 constraints:
+                   nullable: true
+          schemaName:  dbo
+-  changeSet:  
+     id:  addPrimaryKey-UserRoleId  
+     author:  Martin
+     changes:  
+     -  addPrimaryKey:  
+         clustered:  true  
+         columnNames:  UserRoleId 
+         constraintName:  PK_UserRoleId  
+         schemaName:  dbo
+         tableName:  UserRole  
+         validate:  true
+-  changeSet:  
+     id:  addForeignKey-UserID 
+     author:  Ananda 
+     changes:  
+     -  addForeignKeyConstraint:
+          baseColumnNames:  UserId  
+          baseTableName:  UserRole  
+          baseTableSchemaName:  dbo
+          constraintName:  FK_Result_UserId
+          onDelete:  NO ACTION  
+          onUpdate:  NO ACTION   
+          referencedColumnNames:  UserId 
+          referencedTableName:  User 
+          referencedTableSchemaName:  dbo
+          validate:  true
+-  changeSet:  
+     id:  addForeignKey-RoleID 
+     author:  Ananda 
+     changes:  
+     -  addForeignKeyConstraint:
+          baseColumnNames:  RoleId  
+          baseTableName:  UserRole  
+          baseTableSchemaName:  dbo
+          constraintName:  FK_Result_RoleId
+          onDelete:  NO ACTION  
+          onUpdate:  NO ACTION   
+          referencedColumnNames:  RoleId 
+          referencedTableName:  Role 
+          referencedTableSchemaName:  dbo
+          validate:  true
+

@@ -1,0 +1,37 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  createTable-AppSettings  
+     author:  Ananda  
+     changes:  
+     -  createTable:  
+          tableName:   AppSettings  
+          columns:  
+            - column:  
+                 name:  AppSettingId  
+                 type:  int identity(1,1)
+                 autoIncrement: true
+                 constraints:
+                   nullable: false  
+            - column:  
+                 name:  AppSettingName  
+                 type:  nvarchar(200)
+                 constraints:
+                   nullable: true
+            - column:  
+                 name:  AppSettingValue
+                 type:  nvarchar(500)
+                 constraints:
+                   nullable: true
+          remarks:  AppSettings  
+          schemaName:  dbo
+-  changeSet:  
+     id:  addPrimaryKey-AppSetting  
+     author:  Ananda
+     changes:  
+     -  addPrimaryKey:  
+         clustered:  true  
+         columnNames:  AppSettingId  
+         constraintName:  PK_AppSetting 
+         schemaName:  dbo
+         tableName:  AppSettings  
+         validate:  true

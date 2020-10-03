@@ -1,0 +1,31 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  createTable-UserType  
+     author:  Ananda  
+     changes:  
+     -  createTable:  
+          tableName:   UserType  
+          columns:  
+            - column:  
+                 name:  UserTypeID  
+                 type:  int identity(1,1)
+                 autoIncrement: true
+                 constraints:
+                   nullable: false  
+            -  column:  
+                 name:  UserTypeName
+                 type:  nvarchar(50)
+                 constraints:
+                   nullable: false  
+          schemaName:  dbo
+-  changeSet:  
+     id:  addPrimaryKey-UserTypeID  
+     author:  Ananda
+     changes:  
+     -  addPrimaryKey:  
+         clustered:  true  
+         columnNames:  UserTypeID 
+         constraintName:  PK_UserTypeID  
+         schemaName:  dbo
+         tableName:  UserType  
+         validate:  true

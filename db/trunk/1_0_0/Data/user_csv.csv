@@ -1,0 +1,2 @@
+﻿UserId,FirstName,MiddleName,LastName,UserName,IsActive,IsApproved,CreatedDate,CreatedUser,ModifiedDate,ModifiedUser
+2,Ananda,NULL,Raju,anandaraju,1,1,2020-09-22 00:00:00.000,Ananda,2020-09-20 00:00:00.000,NULL

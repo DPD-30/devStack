@@ -1,0 +1,186 @@
+databaseChangeLog:
+- changeSet:
+    id: create_tables
+    author: Ananda
+    comment: "Creating Tables Required for the Application"
+    changes:
+        - tagDatabase:
+            tag: ddl
+- include:
+    id: ddl
+    author: Ananda
+    file: DDL/create_action.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Ananda
+    file: DDL/create_office.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Ananda
+    file: DDL/create_case.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Ananda
+    file: DDL/create_casehistory.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Ananda
+    file: DDL/create_caseoffice.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Ananda
+    file: DDL/create_subject.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Ananda
+    file: DDL/create_casesubject.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Ananda
+    file: DDL/create_identification.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Ananda
+    file: DDL/create_investigator.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Ananda
+    file: DDL/create_investigatoroffice.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Ananda
+    file: DDL/create_SubjectIdentification.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Ananda
+    file: DDL/create_NotificationType.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Ananda
+    file: DDL/create_notification.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Ananda
+    file: DDL/create_Location.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Ananda
+    file: DDL/create_LocationCertification.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Ananda
+    file: DDL/create_LocationPlan.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Ananda
+    file: DDL/create_Section.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Ananda
+    file: DDL/create_appsettings.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Ananda
+    file: DDL/create_claims.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Ananda
+    file: DDL/create_UserType.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Ananda
+    file: DDL/create_result.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Martin
+    file: DDL/create_role.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Martin
+    file: DDL/create_user.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Martin
+    file: DDL/create_userrole.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Martin
+    file: DDL/create_roleclaim.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Martin
+    file: DDL/create_status.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Martin
+    file: DDL/create_phase.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Martin
+    file: DDL/create_POAM.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Martin
+    file: DDL/create_application.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Martin
+    file: DDL/alter_application.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Martin
+    file: DDL/alter_application_add_col_icon.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Martin
+    file: DDL/create_rmf.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Martin
+    file: DDL/alter_rmf.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Martin
+    file: DDL/drop_rmf.yaml
+    relativeToChangelogFile: true
+- include:
+    id: ddl
+    author: Martin
+    file: DDL/create_rmf_false.yaml
+    relativeToChangelogFile: true
+
+
+    

@@ -1,0 +1,15 @@
+databaseChangeLog:
+- changeSet:
+    id: create_tables
+    author: Ananda
+    comment: "Creating Tables Required for the Application"
+    changes:
+        - tagDatabase:
+            tag: ddl
+- include:
+    file: 1_0_0/Tables.yaml
+    relativeToChangeLogFile: true
+- include:
+    file: 1_0_0/DML.yaml
+    relativeToChangeLogFile: true
+

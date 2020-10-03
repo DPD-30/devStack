@@ -1,0 +1,18 @@
+databaseChangeLog:
+- changeSet:
+    id: insert_data
+    author: Ananda
+    comment: "Inserting Data into Tables Required for the Application"
+    changes:
+        - tagDatabase:
+            tag: dml
+#- include:
+#   id: dml
+#    author: Ananda
+#    file: 1_0_0/DML/insert_phase.sql
+#    relativeToChangeLogFile: true
+#- include:
+#    id: dml
+#    author: Ananda
+#    file: 1_0_0/DML/load_application_csv.yaml
+#    relativeToChangeLogFile: true

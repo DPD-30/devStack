@@ -1,0 +1,12 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  update-Status  
+     author:  Ananda  
+     changes:  
+     -  update:  
+          columns:  
+            -  column:  
+                name:  IsActive  
+                value:  0  
+          schemaName:  dbo  
+          tableName:  Status  

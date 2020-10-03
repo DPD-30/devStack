@@ -1,0 +1,72 @@
+pipeline {
+    agent {
+      label 'dotnetCore'  
+     }
+    environment {
+        SonarScannerDotNetHome =  tool name: 'sonarqube_dotnetcore', type: 'hudson.plugins.sonar.MsBuildSQRunnerInstallation'
+        DOTNET_ROLL_FORWARD = 'Major'
+    }
+  stages {
+    stage('Apply To CI DB'){
+        steps{
+            sh 'chmod 700 liquibase.sh'
+            withCredentials([string(credentialsId: 'DB_CI', variable: 'DB_CI')]) {
+                sh './liquibase.sh --password=$DB_CI --defaultsFile=$(pwd)/liquibase.CI.properties update' 
+            }
+        }
+    }
+    stage('Apply To DEV DB'){
+        steps{
+            sh 'chmod 700 liquibase.sh'
+            withCredentials([string(credentialsId: 'DB_DEV', variable: 'DB_DEV')]) {
+                    sh './liquibase.sh --password=$DB_DEV --defaultsFile=$(pwd)/liquibase.DEV.properties update' 
+            }
+        }
+    }
+    stage('Artifactory'){
+        steps{
+            script{
+              
+                env.uploadspec = """
+{
+                    "files": [
+                        {
+                        "pattern": "archive/DB.tgz",
+                        "target": "CACI-BETA/DB/1.0.0+${env.BUILD_NUMBER}/"
+                        }
+                    ]
+                }
+                """ 
+            }
+            sh 'mkdir archive'
+            sh 'tar -czvf archive/DB.tgz *'
+             rtBuildInfo (
+                captureEnv: true       
+            )
+            rtUpload (
+                serverId: 'CACI-Artifactory',
+                spec: "${env.uploadspec}"
+            )
+            rtPublishBuildInfo (
+                serverId: 'CACI-Artifactory'
+            )
+            
+        }
+     
+    }
+        
+ 
+    
+/*
+    stage("Quality Gate") {
+        steps {
+        
+        }
+    }
+
+
+  
+      */
+  }
+
+}

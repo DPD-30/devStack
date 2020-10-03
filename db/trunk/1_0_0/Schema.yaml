@@ -1,0 +1,13 @@
+databaseChangeLog:
+- changeSet:
+    id: create_schemas
+    author: Ananda
+    comment: "Creating Database Schemas for the Application"
+    changes:
+        - tagDatabase:
+            tag: schema
+- include:
+    id: ddl
+    author: Ananda
+    file: 1_0_0/DDL/create_schemas.sql
+    relativeToChangeLogFile: true
