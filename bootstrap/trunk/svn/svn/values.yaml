@@ -1,0 +1,28 @@
+persistence:
+  svnconfig:
+    accessMode: ReadWriteOnce
+    enabled: true
+    namespace: default
+#    volumeName: pvc-4c77ac34-7342-4fc3-8d85-50c10256d613
+  svndata:
+    accessMode: ReadWriteOnce
+    enabled: true
+    namespace: default
+#    volumeName: pvc-db96bd3b-7f12-4d1d-b710-0bed4176527e
+svn:
+  namespace: default
+  restartPolicy: Always
+  serviceType: ClusterIP
+  sessionAffinity: None
+  svn:
+    image: elleflorio/svn-server
+    imagePullPolicy: Always
+    imageTag: latest
+ingress:
+  enabled: true
+  path: "/"
+  hostName: svn.caci-challenge.us
+  tls:
+  - secretName: cicd.caci-challenge.com
+    hosts:
+      - svn.caci-challenge.us

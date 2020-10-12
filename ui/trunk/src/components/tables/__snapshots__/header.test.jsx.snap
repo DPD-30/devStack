@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableHeader matches snapshot with a click handler 1`] = `
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-9">
+      <h2>
+        Mock Header Text
+      </h2>
+    </div>
+    <div style="text-align:right"
+         class="col-3"
+    >
+      <button type="button"
+              class="btn btn-primary"
+      >
+        Mock Button Text
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TableHeader matches snapshot with subheadertext 1`] = `
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-9">
+      <h2>
+        Mock Header Text
+      </h2>
+      <h3>
+        And more
+      </h3>
+    </div>
+    <div style="text-align:right"
+         class="col-3"
+    >
+      <a href="#/mockURL">
+        <button class="btn btn-primary">
+          Mock Button Text
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TableHeader matches snapshot without subheadertext 1`] = `
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-9">
+      <h2>
+        Mock Header Text
+      </h2>
+    </div>
+    <div style="text-align:right"
+         class="col-3"
+    >
+      <a href="#/mockURL">
+        <button class="btn btn-primary">
+          Mock Button Text
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+`;

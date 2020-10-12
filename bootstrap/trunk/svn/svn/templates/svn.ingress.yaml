@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: 100m
+  labels:
+    chart: '{{.Chart.Name}}-{{.Chart.Version}}'
+    heritage: '{{.Release.Service}}'
+    name: svn
+    release: '{{.Release.Name}}'
+  name: '{{ template "fullname" . }}-svn'
+  namespace: '{{.Values.svn.namespace}}'
+spec:
+  rules:
+  - host: {{ .Values.ingress.hostName | quote }}
+    http:
+      paths:
+      - backend:
+          serviceName: '{{ template "fullname" . }}-svn'
+          servicePort: 80
+        path: /
+  tls:
+{{ toYaml .Values.ingress.tls | indent 4 }}
+  

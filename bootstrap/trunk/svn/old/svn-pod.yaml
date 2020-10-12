@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: svn
+  labels:
+    name: svn
+spec:
+  containers:
+  - image: elleflorio/svn-server:latest
+    name: svn
+    volumeMounts:
+      - name: svnconfig
+        mountPath: /etc/subversion
+      - name: svndata
+        mountPath: /home/svn
+    ports:
+      - containerPort: 80
+  volumes:
+      - name: svnconfig
+        persistentVolumeClaim:
+          claimName: svnconfig
+      - name: svndata
+        persistentVolumeClaim:
+          claimName: svndata

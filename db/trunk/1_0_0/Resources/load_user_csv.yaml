@@ -1,0 +1,65 @@
+databaseChangeLog:
+-  changeSet:
+     id:  loadData-User
+     author:  Ananda
+     changes:
+     -  loadData:
+          catalogName:
+          columns:
+            -  column:
+                 header: FirstName
+                 name: FirstName
+                 type: String
+            -  column:
+                 header: MiddleName
+                 name: MiddleName
+                 type: String
+            -  column:
+                 header: LastName
+                 name: LastName
+                 type: String
+            -  column:
+                 header: Email
+                 name: Email
+                 type: String
+            -  column:
+                 header: Password
+                 name: Password
+                 type: String
+            -  column:
+                 header: UserName
+                 name: UserName
+                 type: String
+            -  column:
+                 header: IsActive
+                 name: IsActive
+                 type: BOOLEAN
+            -  column:
+                 header: IsApproved
+                 name: IsApproved
+                 type: BOOLEAN
+            -  column:
+                 header: CreatedDate
+                 name: CreatedDate
+                 type: Datetime
+            -  column:
+                 header: CreatedUser
+                 name: CreatedUser
+                 type: String
+            -  column:
+                 header: ModifiedDate
+                 name: ModifiedDate
+                 type: Datetime
+            -  column:
+                 header: ModifiedUser
+                 name: ModifiedUser
+                 type: String
+          commentLineStartsWith:   //
+          encoding:  UTF-8
+          file: 1_0_0/Data/User_Data.csv
+          quotchar:  ''
+          relativeToChangelogFile:  false
+          schemaName:  dbo
+          separator:  ','
+          tableName:  User
+          usePreparedStatements:  true

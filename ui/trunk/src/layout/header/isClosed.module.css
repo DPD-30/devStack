@@ -1,0 +1,18 @@
+div.header {
+	padding: 1em 0 0.5em 0;
+	background-color: #f3f3f3;
+	height: 5em;
+}
+
+div.appName {
+	text-align: left;
+	font-size: 1.5em;
+	font-weight: bold;
+	vertical-align: top;
+	color: #10274e;
+}
+
+div.userName {
+	text-align: right;
+	padding-right: 4em;
+}

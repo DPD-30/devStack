@@ -1,0 +1,42 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  createTable-Claim 
+     author:  Ananda  
+     changes:  
+     -  createTable:  
+          tableName:   Claim  
+          columns:  
+            - column:  
+                 name:  ClaimId  
+                 type:  int identity(1,1)
+                 autoIncrement: true
+                 constraints:
+                   nullable: false  
+            - column:  
+                 name:  Title  
+                 type:  nvarchar(50)
+                 constraints:
+                   nullable: true
+            - column:  
+                 name:  Description
+                 type:  nvarchar(200)
+                 constraints:
+                   nullable: true
+            - column:  
+                 name:  ClaimCode
+                 type:  nvarchar(50)
+                 constraints:
+                   nullable: true
+          remarks:  Claim  
+          schemaName:  dbo
+-  changeSet:  
+     id:  addPrimaryKey-Claim  
+     author:  Ananda
+     changes:  
+     -  addPrimaryKey:  
+         clustered:  true  
+         columnNames:  ClaimId  
+         constraintName:  PK_Claim 
+         schemaName:  dbo
+         tableName:  Claim  
+         validate:  true

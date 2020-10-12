@@ -1,0 +1,4 @@
+capabilities:
+  browserName: "chrome"
+server: http://selenium-selenium-hub.default:4444/wd/hub
+baseUrl: https://cacichallengetest.z2.web.core.usgovcloudapi.net/

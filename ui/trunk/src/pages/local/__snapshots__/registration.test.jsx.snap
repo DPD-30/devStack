@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Registration can change confirm password field as bad (no digits) 1`] = `ReactWrapper {}`;
+
+exports[`Registration can change confirm password field as bad (no lowers) 1`] = `ReactWrapper {}`;
+
+exports[`Registration can change confirm password field as bad (no special chars) 1`] = `ReactWrapper {}`;
+
+exports[`Registration can change confirm password field as bad (no special chars) 2`] = `ReactWrapper {}`;
+
+exports[`Registration can change confirm password field as bad 1`] = `ReactWrapper {}`;
+
+exports[`Registration can change confirm password field as good 1`] = `ReactWrapper {}`;
+
+exports[`Registration can change confirm password field as good and register 1`] = `ReactWrapper {}`;
+
+exports[`Registration can validate if everything is good 1`] = `ReactWrapper {}`;
+
+exports[`Registration click register button 1`] = `ReactWrapper {}`;
+
+exports[`Registration click reset button 1`] = `ReactWrapper {}`;
+
+exports[`Registration should match snapshot 1`] = `ReactWrapper {}`;

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LayoutContent matches snapshot 1`] = `
+<div class="content"
+     data-reactroot
+>
+  <routes>
+  </routes>
+</div>
+`;

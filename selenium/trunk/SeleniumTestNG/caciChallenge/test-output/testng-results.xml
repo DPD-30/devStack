@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-10-08T11:55:14 EDT" name="Caci Challenge Suite" finished-at="2020-10-08T11:58:48 EDT" duration-ms="214787">
+    <groups>
+    </groups>
+    <test started-at="2020-10-08T11:55:14 EDT" name="Test" finished-at="2020-10-08T11:58:48 EDT" duration-ms="214787">
+      <class name="loginLogout.AzureLoginLogout">
+        <test-method signature="azureLoginLogout(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:loginLogout.AzureLoginLogout@6e20b53a]" started-at="2020-10-08T11:55:45 EDT" name="azureLoginLogout" finished-at="2020-10-08T11:56:27 EDT" duration-ms="42320" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://localhost:5555/wd/hub]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://localhost:3000/#/]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Hakan.karaman@cacitest.onmicrosoft.us]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Xakah1905$]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- azureLoginLogout -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:loginLogout.AzureLoginLogout@6e20b53a]" started-at="2020-10-08T11:56:27 EDT" name="quitDriver" finished-at="2020-10-08T11:56:27 EDT" duration-ms="354" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+      </class> <!-- loginLogout.AzureLoginLogout -->
+      <class name="loginLogout.FormLoginLogout">
+        <test-method signature="formLoginLogout(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:loginLogout.FormLoginLogout@3ce1e309]" started-at="2020-10-08T11:56:47 EDT" name="formLoginLogout" finished-at="2020-10-08T11:57:06 EDT" duration-ms="18608" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://localhost:5555/wd/hub]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://localhost:3000/#/]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Hakan.karaman@cacitest.onmicrosoft.us]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Xakah1905$]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- formLoginLogout -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:loginLogout.FormLoginLogout@3ce1e309]" started-at="2020-10-08T11:57:06 EDT" name="quitDriver" finished-at="2020-10-08T11:57:10 EDT" duration-ms="4478" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+      </class> <!-- loginLogout.FormLoginLogout -->
+      <class name="loginLogout.FormRegistration">
+        <test-method signature="formRegistration(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:loginLogout.FormRegistration@6aba2b86]" started-at="2020-10-08T11:57:10 EDT" name="formRegistration" finished-at="2020-10-08T11:57:28 EDT" duration-ms="17785" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://localhost:5555/wd/hub]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://localhost:3000/#/]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Xakah1905$]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- formRegistration -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:loginLogout.FormRegistration@6aba2b86]" started-at="2020-10-08T11:57:28 EDT" name="quitDriver" finished-at="2020-10-08T11:57:33 EDT" duration-ms="4493" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+      </class> <!-- loginLogout.FormRegistration -->
+      <class name="pages.Home_FormLogin">
+        <test-method is-config="true" signature="formLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:pages.Home_FormLogin@74e52303]" started-at="2020-10-08T11:58:22 EDT" name="formLogin" finished-at="2020-10-08T11:58:38 EDT" duration-ms="15592" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://localhost:5555/wd/hub]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://localhost:3000/#/]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Hakan.karaman@cacitest.onmicrosoft.us]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Xakah1905$]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- formLogin -->
+        <test-method signature="navigateToHomePage()[pri:0, instance:pages.Home_FormLogin@74e52303]" started-at="2020-10-08T11:58:38 EDT" name="navigateToHomePage" finished-at="2020-10-08T11:58:40 EDT" duration-ms="2089" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="formLogout()[pri:0, instance:pages.Home_FormLogin@74e52303]" started-at="2020-10-08T11:58:40 EDT" name="formLogout" finished-at="2020-10-08T11:58:48 EDT" duration-ms="8333" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- formLogout -->
+      </class> <!-- pages.Home_FormLogin -->
+      <class name="loginLogout.AzureLogin">
+        <test-method signature="azureLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:loginLogout.AzureLogin@8dbdac1]" started-at="2020-10-08T11:55:14 EDT" name="azureLogin" finished-at="2020-10-08T11:55:40 EDT" duration-ms="26485" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://localhost:5555/wd/hub]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://localhost:3000/#/]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Hakan.karaman@cacitest.onmicrosoft.us]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Xakah1905$]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- azureLogin -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:loginLogout.AzureLogin@8dbdac1]" started-at="2020-10-08T11:55:40 EDT" name="quitDriver" finished-at="2020-10-08T11:55:45 EDT" duration-ms="4518" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+      </class> <!-- loginLogout.AzureLogin -->
+      <class name="pages.Home_AzureLogin">
+        <test-method is-config="true" signature="azureLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:pages.Home_AzureLogin@158da8e]" started-at="2020-10-08T11:57:33 EDT" name="azureLogin" finished-at="2020-10-08T11:57:57 EDT" duration-ms="24614" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://localhost:5555/wd/hub]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://localhost:3000/#/]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Hakan.karaman@cacitest.onmicrosoft.us]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Xakah1905$]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- azureLogin -->
+        <test-method signature="navigateToHomePage()[pri:0, instance:pages.Home_AzureLogin@158da8e]" started-at="2020-10-08T11:57:57 EDT" name="navigateToHomePage" finished-at="2020-10-08T11:57:59 EDT" duration-ms="2093" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="azureLogout(java.lang.String)[pri:0, instance:pages.Home_AzureLogin@158da8e]" started-at="2020-10-08T11:57:59 EDT" name="azureLogout" finished-at="2020-10-08T11:58:22 EDT" duration-ms="23002" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Hakan.karaman@cacitest.onmicrosoft.us]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- azureLogout -->
+      </class> <!-- pages.Home_AzureLogin -->
+      <class name="loginLogout.FormLogin">
+        <test-method signature="formLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:loginLogout.FormLogin@71809907]" started-at="2020-10-08T11:56:27 EDT" name="formLogin" finished-at="2020-10-08T11:56:43 EDT" duration-ms="15561" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://localhost:5555/wd/hub]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://localhost:3000/#/]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Hakan.karaman@cacitest.onmicrosoft.us]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Xakah1905$]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- formLogin -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:loginLogout.FormLogin@71809907]" started-at="2020-10-08T11:56:43 EDT" name="quitDriver" finished-at="2020-10-08T11:56:47 EDT" duration-ms="4431" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+      </class> <!-- loginLogout.FormLogin -->
+    </test> <!-- Test -->
+  </suite> <!-- Caci Challenge Suite -->
+</testng-results>

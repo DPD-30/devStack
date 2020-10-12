@@ -1,0 +1,32 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  createTable-Office  
+     author:  Ananda  
+     changes:  
+     -  createTable:  
+          tableName:   Office  
+          columns:  
+            - column:  
+                 name:  OfficeID  
+                 type:  int identity(1,1)
+                 autoIncrement: true
+                 constraints:
+                   nullable: false  
+            - column:  
+                 name:  Name
+                 type:  nvarchar(50)
+                 constraints:
+                   nullable: false 
+          remarks:  Office  
+          schemaName:  inv
+-  changeSet:  
+     id:  addPrimaryKey-Office  
+     author:  Ananda
+     changes:  
+     -  addPrimaryKey:  
+         clustered:  true  
+         columnNames:  OfficeID  
+         constraintName:  PK_Office 
+         schemaName:  inv
+         tableName:  Office  
+         validate:  true

@@ -1,0 +1,338 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Expired and Late report matches snapshot 1`] = `
+<div data-reactroot>
+  <h2>
+    <div>
+      mock icon
+    </div>
+    Expired
+  </h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>
+          Application Name
+        </th>
+        <th style="text-align:center">
+          Status
+        </th>
+        <th>
+          Owner
+        </th>
+        <th style="text-align:center">
+          IMatrix #
+        </th>
+        <th style="text-align:center">
+          Phase
+        </th>
+        <th>
+          POC
+        </th>
+        <th style="text-align:center">
+          Expiration
+        </th>
+        <th style="text-align:center">
+          Icon
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          IMS
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td>
+          IMS
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td>
+          User1
+        </td>
+        <td style="text-align:center">
+          2020-09-20
+        </td>
+        <td style="text-align:center">
+          <div>
+            mock icon
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          AWRE
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td>
+          IMS
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td>
+          User1
+        </td>
+        <td style="text-align:center">
+          2020-09-20
+        </td>
+        <td style="text-align:center">
+          <div>
+            mock icon
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Pagasys
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td>
+          IMS
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td>
+          User1
+        </td>
+        <td style="text-align:center">
+          2020-09-20
+        </td>
+        <td style="text-align:center">
+          <div>
+            mock icon
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          NBS
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td>
+          IMS
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td>
+          User1
+        </td>
+        <td style="text-align:center">
+          2020-05-20
+        </td>
+        <td style="text-align:center">
+          <div>
+            mock icon
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          MdM
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td>
+          IMS
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td>
+          User1
+        </td>
+        <td style="text-align:center">
+          2020-09-23
+        </td>
+        <td style="text-align:center">
+          <div>
+            mock icon
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          AWARE
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td>
+          IMS
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td>
+          User1
+        </td>
+        <td style="text-align:center">
+          2020-09-13
+        </td>
+        <td style="text-align:center">
+          <div>
+            mock icon
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          NBS
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td>
+          IMS
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td style="text-align:center">
+          2
+        </td>
+        <td>
+          User1
+        </td>
+        <td style="text-align:center">
+          2020-05-20
+        </td>
+        <td style="text-align:center">
+          <div>
+            mock icon
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h2>
+    <div>
+      mock icon
+    </div>
+    Upcoming Expirations
+    <small>
+      (within 60 days)
+    </small>
+  </h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>
+          Application Name
+        </th>
+        <th style="text-align:center">
+          Status
+        </th>
+        <th>
+          Owner
+        </th>
+        <th style="text-align:center">
+          IMatrix #
+        </th>
+        <th style="text-align:center">
+          Phase
+        </th>
+        <th>
+          POC
+        </th>
+        <th style="text-align:center">
+          Expiration
+        </th>
+        <th style="text-align:center">
+          Icon
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          MdM
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td>
+          IMS
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td style="text-align:center">
+          6
+        </td>
+        <td>
+          User1
+        </td>
+        <td style="text-align:center">
+          2020-10-23
+        </td>
+        <td style="text-align:center">
+          <div>
+            mock icon
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          AWARE
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td>
+          IMS
+        </td>
+        <td style="text-align:center">
+          1
+        </td>
+        <td style="text-align:center">
+          3
+        </td>
+        <td>
+          User1
+        </td>
+        <td style="text-align:center">
+          2020-10-13
+        </td>
+        <td style="text-align:center">
+          <div>
+            mock icon
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

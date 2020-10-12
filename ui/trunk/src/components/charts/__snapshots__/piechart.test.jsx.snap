@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PagesPieChart should match snapshot 1`] = `
+<div class="cardStyle card"
+     data-reactroot
+>
+  <div class="titleContainer">
+    <h4 class="titleStyle">
+    </h4>
+    <p class="subTitleStyle">
+    </p>
+  </div>
+</div>
+`;
+
+exports[`match snapshot with populate state varaiables 1`] = `ReactWrapper {}`;
+
+exports[`match snapshot with populate state varaiables 2`] = `ReactWrapper {}`;
+
+exports[`match snapshot with populate state varaiables 3`] = `ReactWrapper {}`;

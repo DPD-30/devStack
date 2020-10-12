@@ -1,0 +1,19 @@
+{
+	"capabilities":
+		[
+			{
+				"browserName": "chrome",
+				"maxInstances": 1
+				"seleniumProtocol": "WebDriver",
+      			"platform":"linux"
+			}
+		],
+			"proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
+			"port":5555,
+			"hubPort":4444,
+			"hubHost":"localhost",
+			"registerCycle":10000,
+			"register":true,
+			"timeout":30000,
+			"maxSession":1
+}				

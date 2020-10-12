@@ -1,0 +1,224 @@
+pipeline {
+    agent {
+        label 'node'  
+     }
+    tools {
+        git "Default"
+    } 
+    
+  stages {
+    stage('Download Release Artifacts'){
+        steps{
+            sh 'mkdir artifacts'
+            
+            rtDownload (
+                serverId: 'CACI-Artifactory',
+                specPath: 'dependencies.json',
+                failNoOp: true
+            )
+        
+      }
+    }
+    stage("Extract files") {
+        steps {
+            dir('artifacts')
+            {
+                sh 'mkdir webapp'
+                sh 'mkdir DB'
+                sh 'mkdir API'
+                sh 'mkdir functionaltest'
+                sh 'tar -xzf webapp.tgz -C webapp'
+                sh 'tar -xzf DB.tgz -C DB'
+                sh 'tar -xzf API.tgz -C API'
+                sh 'tar -xzf functionaltest.tgz -C functionaltest'
+    
+            }
+        }
+    }
+
+    stage('Test DB publish'){
+        steps{
+            dir('artifacts/DB/'){
+                sh 'chmod 700 liquibase.sh'
+                withCredentials([string(credentialsId: 'DB_TEST', variable: 'DB_TEST')]) {
+                    sh './liquibase.sh --password=$DB_TEST --defaultsFile=$(pwd)/liquibase.TEST.properties update' 
+                }
+            }
+        }
+    }
+   
+    stage('.Net API publish Test'){
+        steps{
+            azureWebAppPublish azureCredentialsId: 'Azure',
+                resourceGroup: "CACI-APP-TEST-RG", appName: "CACI-API-Test",
+                filePath: '**', sourceDirectory: './artifacts/API/', targetDirectory: ''
+                
+        // slotname: ''
+        }
+        
+        
+    }  
+    
+    stage('UI publish Test') {
+        steps{
+            sh '''wget https://aka.ms/downloadazcopy-v10-linux 
+tar -xvf downloadazcopy-v10-linux
+apk update && apk add libc6-compat curl 
+cp ./azcopy_linux_amd64_*/azcopy /usr/bin/
+'''
+            dir('artifacts/webapp/'){
+                sh 'rm appSettings.json'
+                sh 'mv appSettings.Test.json appSettings.json'
+                withCredentials([string(credentialsId: 'cacichallengetest', variable: 'SAS')]) {
+                    sh 'azcopy copy "*" "https://cacichallengetest.blob.core.usgovcloudapi.net/%24web?$SAS" --recursive'
+                }   
+            }
+        }
+    } 
+     stage('install chromedriver')
+    {   
+        steps{
+                sh "apk update && apk add --no-cache bash \
+        alsa-lib \
+        at-spi2-atk \
+        atk \
+        cairo \
+        cups-libs \
+        dbus-libs \
+        eudev-libs \
+        expat \
+        flac \
+        gdk-pixbuf \
+        glib \
+        libgcc \
+        libjpeg-turbo \
+        libpng \
+        libwebp \
+        libx11 \
+        libxcomposite \
+        libxdamage \
+        libxext \
+        libxfixes \
+        tzdata \
+        libexif \
+        udev \
+        xvfb \
+        zlib-dev \
+        chromium \
+        chromium-chromedriver \
+        openjdk11"
+
+        }
+    }
+    stage('Execute Functional Test') {
+        steps{
+         //   sh 'npm ci'
+          //  warnError('Selenium Test Failed'){
+              //  sh 'npx selenium-side-runner SeleniumIDE/*.side --config-file config.test.yaml --output-format=junit --output-directory=results -w 3'    
+          //  }
+            warnError('Selenium Test Failed'){
+                dir('artifacts/functionaltest/SeleniumTestNG/caciChallenge'){
+                    withCredentials([string(credentialsId: 'SeleniumUser', variable: 'SeleniumUser')]){ 
+                        sh 'java -cp /usr/bin/chromedriver:./lib/*:bin -Dwebdriver.chrome.driver=chromedriver -DnodeURL=http://selenium-selenium-hub.default:4444/wd/hub -Durl=https://cacichallengetest.z2.web.core.usgovcloudapi.net -Dusername=challengeuser7@cacitest.onmicrosoft.us -Dpassword=$SeleniumUser org.testng.TestNG challenge-testng.xml'
+                    }
+
+                    
+
+                }
+                junit 'artifacts/functionaltest/SeleniumTestNG/caciChallenge/test-output/junitreports/**'
+            }
+        }
+    }
+
+
+    stage('Publish to Artifactory') {
+        steps{
+            script{
+                env.uploadspec = """
+{
+    "files": [
+        {
+        "pattern": "artifacts/*.tgz",
+        "target": "CACI-Release/1.0.0+${env.BUILD_NUMBER}/"
+        }
+    ]
+}
+""" 
+            }
+            rtUpload (
+            serverId: 'CACI-Artifactory',
+            spec: "${env.uploadspec}"
+            )
+            rtPublishBuildInfo (
+            serverId: 'CACI-Artifactory'
+            )
+        }
+    }
+    stage('Release to PROD Approval'){
+        input{
+            message "Deploy this release to Production?"
+            ok "Yes, release APPROVED for production"
+            submitter "daughertydp,boydml,andersonjb"
+        }
+        steps{
+            rtPromote (
+               // buildName: "${env.JOB_NAME}",
+               // buildNumber: "${env.BUILD_NUMBER}",
+                serverId: 'CACI-Artifactory',
+                targetRepo: 'CACI-Release',
+                // Comment and Status to be displayed in the Build History tab in Artifactory
+                comment: 'Promoted to Production.',
+                status: 'Released to Production.'   
+            )
+        }
+
+    }
+ 
+    stage('Production DB publish'){
+        steps{
+            dir('artifacts/DB/'){
+                sh 'chmod 700 liquibase.sh'
+                withCredentials([string(credentialsId: 'DB_PROD', variable: 'DB_PROD')]) {
+                    sh './liquibase.sh --password=$DB_PROD --defaultsFile=$(pwd)/liquibase.PROD.properties update' 
+                }
+            }
+        }
+    }
+   
+    stage('.Net API publish Production'){
+        steps{
+            azureWebAppPublish azureCredentialsId: 'Azure',
+                resourceGroup: "CACI-APP-PROD-RG", appName: "CACI-API-Prod",
+                filePath: '**', sourceDirectory: './artifacts/API/', targetDirectory: ''
+                
+        }
+        
+        
+    }  
+    
+    stage('UI publish Production') {
+        steps{
+      //      sh '''wget https://aka.ms/downloadazcopy-v10-linux 
+//tar -xvf downloadazcopy-v10-linux
+//apk update && apk add libc6-compat curl cp ./azcopy_linux_amd64_*/azcopy /usr/bin/
+//'''
+            dir('artifacts/webapp/'){
+                sh 'rm appSettings.json'
+                sh 'mv appSettings.Production.json appSettings.json'
+                withCredentials([string(credentialsId: 'cacichallenge', variable: 'SAS')]) {
+                    sh 'azcopy copy "*" "https://cacichallenge.blob.core.usgovcloudapi.net/%24web?$SAS" --recursive'
+                }
+            }
+        }
+    } 
+   
+ /*    stage('Execute Functional Smoke Tests') {
+        steps{
+            echo 'TODO Smoke Tests. '
+        }
+    }
+*/
+
+  }
+
+}

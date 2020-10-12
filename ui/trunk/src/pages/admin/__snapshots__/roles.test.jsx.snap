@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PagesAdminRoles can change the ID 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminRoles can change the description 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminRoles can change the title 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminRoles can delete 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminRoles can handle null created date (new / unsaved) 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminRoles can handleDoubleClick 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminRoles can handleDoubleClick with null event 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminRoles can handleSave new 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminRoles can handleSave new and defaulted null id 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminRoles can handleSave new, failing validation 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminRoles can handleSave update 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminRoles can handleSave with null event, and do nothing 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminRoles can match snapshot for FAILURE 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminRoles can match snapshot for LOADING 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminRoles can match snapshot for SUCCESS 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminRoles can match snapshot for an array of roles 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminRoles can match snapshot for nil roles 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminRoles can show modified user info in the modal 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminRoles can test validation condition 1 (false) 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminRoles can test validation condition 1 (true) 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminRoles can test validation condition 2 (true) 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminRoles opens modal to add new 1`] = `ReactWrapper {}`;

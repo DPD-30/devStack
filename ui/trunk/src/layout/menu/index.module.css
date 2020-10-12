@@ -1,0 +1,11 @@
+div.menu {
+    border-bottom: 3px solid #f71832;
+    clear: both;
+    margin-top: 1em;
+}
+
+ul.navCustom {
+    background-color: #fff;
+    font-size: 1em;
+    padding: 0;
+}

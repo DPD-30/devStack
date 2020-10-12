@@ -1,0 +1,264 @@
+{
+  "id": "8a28e0c7-f846-4d01-92c2-7a9480572ad0",
+  "version": "2.0",
+  "name": "loginLogoutChallengeNEW",
+  "url": "http://localhost:3000/#/",
+  "tests": [{
+    "id": "fffa95b7-c792-473a-aeaf-2e975d1ef455",
+    "name": "logout",
+    "commands": [{
+      "id": "6a139c48-3dc4-4db6-8ee0-4fa6a46983cd",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e57afcce-6755-454f-856a-70bcb3306028",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1261x660",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1852b5f3-3a0e-4529-b9bc-68e939783afd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.burger_headerBurger__3B-Rz",
+      "targets": [
+        ["css=.burger_headerBurger__3B-Rz", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3b54f657-4a0d-4733-acd3-4f291da31d75",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["name=login", "name"],
+        ["css=.button_navItemCustom__1JZ7h:nth-child(2) > .button_navLinkCustom__WQ870", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//a[@name='login']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/div/div[2]/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#/login')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e296c35-581e-4cc1-815a-17e047c4425d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(2)",
+      "targets": [
+        ["css=.btn:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Azure Sign Out')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5652a1ea-b390-493f-a277-affdbd844fc9",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(2) > small",
+      "targets": [
+        ["css=div:nth-child(2) > small", "css:finder"],
+        ["xpath=//div[@id='tilesHolder']/div/div/div/div/div[2]/div[2]/small", "xpath:idRelative"],
+        ["xpath=//small", "xpath:position"],
+        ["xpath=//small[contains(.,'Hakan.karaman@cacitest.onmicrosoft.us')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "182fd15d-724a-4572-adbd-7ec638715245",
+    "name": "login",
+    "commands": [{
+      "id": "e268f3e7-b4d2-4044-8ec5-5137253c52d7",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1ed43c51-1246-473a-87fa-1077815b74f6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1261x660",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5ab5b1d3-29a3-440e-8032-273d212dcb7b",
+      "comment": "",
+      "command": "click",
+      "target": "css=button[class=\"burger_headerBurger__3B-Rz btn btn-secondary\"]",
+      "targets": [
+        ["css=.burger_headerBurger__3B-Rz", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "61f4712c-8010-4076-8bbd-f4fd82b9165e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["name=login", "name"],
+        ["css=.button_navItemCustom__1JZ7h:nth-child(2) > .button_navLinkCustom__WQ870", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//a[@name='login']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/div/div[2]/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#/login')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "76ceb6fc-b275-47e8-bde8-8c805489d457",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Azure Sign In')]", "xpath:innerText"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win2549",
+      "windowTimeout": 2000
+    }, {
+      "id": "77b60722-d972-4f0c-9d21-e1fdeefe2935",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win2549}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4a452629-2d5f-471e-bd13-04a1b371122d",
+      "comment": "",
+      "command": "pause",
+      "target": "",
+      "targets": [],
+      "value": "1500"
+    }, {
+      "id": "12c840b9-dc53-4eb3-a77d-16e4a91bef49",
+      "comment": "",
+      "command": "click",
+      "target": "id=i0116",
+      "targets": [
+        ["id=i0116", "id"],
+        ["name=loginfmt", "name"],
+        ["css=#i0116", "css:finder"],
+        ["xpath=//input[@id='i0116']", "xpath:attributes"],
+        ["xpath=//form[@id='i0281']/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0fa4d4c2-b474-46cb-92fc-83ba59db73f1",
+      "comment": "",
+      "command": "type",
+      "target": "id=i0116",
+      "targets": [
+        ["id=i0116", "id"],
+        ["name=loginfmt", "name"],
+        ["css=#i0116", "css:finder"],
+        ["xpath=//input[@id='i0116']", "xpath:attributes"],
+        ["xpath=//form[@id='i0281']/div/div/div/div[2]/div[2]/div/div/div/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "hakan.karaman@cacitest.onmicrosoft.us"
+    }, {
+      "id": "fb776ea7-51ab-4623-962a-809ac63e3ca5",
+      "comment": "",
+      "command": "//sendKeys",
+      "target": "id=i0116",
+      "targets": [],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "743343d0-abbf-4302-86c1-2ef0fb3e447a",
+      "comment": "",
+      "command": "click",
+      "target": "css=input[value=\"Next\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3c340a90-3d15-449c-a248-15c06d940ff6",
+      "comment": "",
+      "command": "pause",
+      "target": "",
+      "targets": [],
+      "value": "2500"
+    }, {
+      "id": "815f5b23-43f2-4c1e-86e2-034ec00f95bc",
+      "comment": "",
+      "command": "click",
+      "target": "name=passwd",
+      "targets": [
+        ["id=i0118", "id"],
+        ["name=passwd", "name"],
+        ["css=#i0118", "css:finder"],
+        ["xpath=//input[@id='i0118']", "xpath:attributes"],
+        ["xpath=//form[@id='i0281']/div/div/div/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a59ba83-4f51-483b-940d-be19cf3dcbb8",
+      "comment": "",
+      "command": "type",
+      "target": "name=passwd",
+      "targets": [
+        ["id=i0118", "id"],
+        ["name=passwd", "name"],
+        ["css=#i0118", "css:finder"],
+        ["xpath=//input[@id='i0118']", "xpath:attributes"],
+        ["xpath=//form[@id='i0281']/div/div/div/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Xakah1905"
+    }, {
+      "id": "434775d0-d662-4e6b-ac3c-4259c7bfc30d",
+      "comment": "",
+      "command": "pause",
+      "target": "",
+      "targets": [],
+      "value": "2500"
+    }, {
+      "id": "07f81f15-cc13-43f9-b996-1398522db2e2",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=passwd",
+      "targets": [],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "fe64605b-6fdc-4c95-9fb3-5d0f94c7c048",
+      "comment": "",
+      "command": "pause",
+      "target": "",
+      "targets": [],
+      "value": "2500"
+    }]
+  }],
+  "suites": [{
+    "id": "4bbfbaf4-12e0-4cae-a2ed-8f5e5e967a59",
+    "name": "Login_Logout",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["182fd15d-724a-4572-adbd-7ec638715245", "fffa95b7-c792-473a-aeaf-2e975d1ef455"]
+  }],
+  "urls": ["http://localhost:3000/#/"],
+  "plugins": []
+}

@@ -1,0 +1,59 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  createTable-Phase  
+     author:  Martin  
+     changes:  
+     -  createTable:  
+          tableName:   Phase  
+          columns:  
+            - column:  
+                 name:  PhaseId  
+                 type:  int identity(1,1)
+                 autoIncrement: true
+                 constraints:
+                   nullable: false  
+            -  column:  
+                 name:  Name
+                 type:  nvarchar(255)
+                 constraints:
+                   nullable: true
+            - column:  
+                 name:  IsActive
+                 type:  bit 
+                 defaultValueBoolean:  true
+                 constraints:
+                   nullable: false
+            -  column:  
+                 name:  CreatedDate
+                 type:  DateTime
+                 defaultValueDate:  getdate()
+                 constraints:
+                   nullable: true 
+            -  column:  
+                 name:  CreatedUser
+                 type:  nvarchar(255)
+                 constraints:
+                   nullable: true 
+            -  column:  
+                 name:  ModifiedDate
+                 type:  DateTime
+                 defaultValueDate:  getdate()
+                 constraints:
+                   nullable: true
+            -  column:  
+                 name:  ModifiedUser
+                 type:  nvarchar(255)
+                 constraints:
+                   nullable: true
+          schemaName:  dbo
+-  changeSet:  
+     id:  addPrimaryKey-PhaseId  
+     author:  Martin
+     changes:  
+     -  addPrimaryKey:  
+         clustered:  true  
+         columnNames:  PhaseId 
+         constraintName:  PK_PhaseId  
+         schemaName:  dbo
+         tableName:  Phase  
+         validate:  true

@@ -1,0 +1,50 @@
+
+
+.cardStyle {
+    height: 550px;
+}
+
+.titleContainer {
+    padding: 15px 15px 0px 15px;
+}
+
+.titleStyle {
+    margin:0;
+    color: #333333;
+    font-weight:300;
+}
+
+.subTitleStyle {
+    font-size:14px;
+    font-weight:400;
+    color:#9A9A9A;
+    margin-bottom:0px;
+}
+
+.statCard {
+    text-align: right;
+    margin-right: 10px;
+}
+
+.statTitle {
+    font-size: 1.5em;
+}
+
+.statValue {
+    font-size: 2.5em
+}
+
+.statFooterBGColor {
+    background-color:white !important
+}
+.statFooterColor {
+    color:#a9a9a9
+}
+
+.statIcon {
+    margin-left: 40px;
+    font-size: 5em;
+    min-height: 64px;
+    font-weight: bold;
+    line-height: 59px;
+}

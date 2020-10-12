@@ -1,0 +1,28 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  alterTable-User 
+     author:  Ananda  
+     changes:  
+     -  addColumn:  
+          tableName:   User  
+          columns:  
+            -  column:  
+                 name:  RoleId  
+                 type:  int
+                 constraints:
+                   nullable: true
+-  changeSet:  
+     id:  addForeignKey-FK_User_Role
+     author:  Ananda 
+     changes:  
+     -  addForeignKeyConstraint:
+          baseColumnNames:  RoleId  
+          baseTableName:  User  
+          baseTableSchemaName:  dbo
+          constraintName:  FK_User_Role  
+          onDelete:  "CASCADE"  
+          onUpdate:  "CASCADE" 
+          referencedColumnNames:  RoleId 
+          referencedTableName:  Role 
+          referencedTableSchemaName:  dbo
+          validate:  false

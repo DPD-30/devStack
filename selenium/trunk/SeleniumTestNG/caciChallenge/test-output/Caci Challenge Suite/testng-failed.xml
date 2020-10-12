@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite configfailurepolicy="continue" thread-count="1" parallel="classes" name="Failed suite [Caci Challenge Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="1" parallel="classes" name="Test(failed)">
+    <parameter name="password" value=""/>
+    <parameter name="nodeURL" value="http://localhost:5555/wd/hub"/>
+    <parameter name="url" value="http://localhost:3000/#/"/>
+    <parameter name="username" value=""/>
+    <classes>
+      <class name="loginLogout.FormRegistration">
+        <methods>
+          <include name="azureLoginTest" invocation-numbers="0"/>
+          <include name="quitDriver"/>
+        </methods>
+      </class> <!-- loginLogout.FormRegistration -->
+      <class name="pages.Home_FormLogin">
+        <methods>
+          <include name="quitDriver"/>
+          <include name="formLogin"/>
+          <include name="navigateToHomePage"/>
+        </methods>
+      </class> <!-- pages.Home_FormLogin -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Caci Challenge Suite] -->

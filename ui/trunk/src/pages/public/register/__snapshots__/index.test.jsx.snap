@@ -1,0 +1,6 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PagesRegister should match snapshot 1`] = `
+<div data-reactroot>
+</div>
+`;

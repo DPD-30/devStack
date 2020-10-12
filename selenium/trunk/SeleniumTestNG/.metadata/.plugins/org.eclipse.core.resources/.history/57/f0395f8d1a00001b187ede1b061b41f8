@@ -1,0 +1,118 @@
+package pages;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import java.util.Iterator;
+import java.util.Set;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+
+
+public class expiredLate {
+	WebDriver driver;
+	
+  @Test
+  public void navigateToExpiredLatePage() throws InterruptedException {
+	  // click 'Expired/Late' tab
+	  driver.findElement(By.cssSelector("button[class='burger_headerBurger__3TUiB btn btn-secondary']")).click();
+	  Thread.sleep(1000);
+	  driver.findElement(By.cssSelector("a[name='expiredAndLate']")).click();
+	  Thread.sleep(1000);
+	  
+	  // ASSERTION: verify user is on 'Expired/Late' page
+	  
+	  
+  }
+  
+  @BeforeClass
+  public void beforeClass() throws InterruptedException {
+	  // driver, baseURL
+	  System.setProperty("webdriver.chrome.driver", "C:\\Users\\caciuser\\LocalDev\\seleniumLibrary\\chromedriver.exe");
+	  driver = new ChromeDriver();
+	  String baseURL = "http://localhost:3000/#/";
+	  driver.get(baseURL);
+	  
+	  // maximize browser
+	  driver.manage().window().maximize();
+	  
+	  // grab parent window handle
+	  String parentWindow = driver.getWindowHandle();
+	  System.out.println("The parent window is "+parentWindow);
+	  Thread.sleep(1000);
+	  
+	  // click 'Login' tab
+	  driver.findElement(By.cssSelector("button[class='burger_headerBurger__3TUiB btn btn-secondary']")).click();
+	  Thread.sleep(1000);
+	  driver.findElement(By.cssSelector("a[name='login']")).click();
+	  Thread.sleep(1000);
+	  
+	  // Azure Login
+	  // click 'Azure Sign In' button
+	  driver.findElement(By.xpath("//button[contains(text(),'Azure Sign In')]")).click();
+	  Thread.sleep(1000);
+	  
+	  // switch to new window
+	  Set<String> allWindows = driver.getWindowHandles();
+	  System.out.println("Window handles "+allWindows);
+	  Iterator<String> i = allWindows.iterator();
+	  while(i.hasNext()){
+		  String childWindow = i.next();
+		  if(!childWindow.equalsIgnoreCase(parentWindow)){
+			  driver.switchTo().window(childWindow);
+			  System.out.println("The child window is "+childWindow);
+		  }
+	  }
+         
+      Thread.sleep(1000);
+	  
+      // provide credentials
+	  driver.findElement(By.cssSelector("input[name='loginfmt']")).sendKeys("hakan.karaman@cacitest.onmicrosoft.us");
+	  Thread.sleep(1000);
+	  driver.findElement(By.cssSelector("input[id='idSIButton9']")).click();
+	  Thread.sleep(1000);
+	  driver.findElement(By.cssSelector("input[name='passwd']")).sendKeys("Xakah1905");
+	  Thread.sleep(1000);
+	  driver.findElement(By.cssSelector("input[value='Sign in']")).click();
+	  Thread.sleep(2000);
+	  
+	  // switch back to parent window
+	  driver.switchTo().window(parentWindow);
+	  Thread.sleep(2000);
+	  
+	  // ASSERTION: verify user is logged in
+	  Thread.sleep(1000);
+	  WebElement azureSignOutBtn = driver.findElement(By.xpath("//button[contains(text(),'Azure Sign Out')]"));
+	  Assert.assertEquals(true, azureSignOutBtn.isDisplayed());
+	  Thread.sleep(2000);
+	  
+  }
+
+  @AfterClass
+  public void afterClass() throws InterruptedException {
+	  // Azure logout
+	  driver.findElement(By.xpath("//button[contains(text(),'Azure Sign Out')]")).click();
+	  Thread.sleep(2000);
+	  driver.findElement(By.xpath("//small[contains(text(),'Hakan.karaman@cacitest.onmicrosoft.us')]")).click();
+	  Thread.sleep(10000);
+	  
+	  // ASSERTION: verify user is logged out
+	  driver.findElement(By.cssSelector("button[class='burger_headerBurger__3TUiB btn btn-secondary']")).click();
+	  Thread.sleep(1000);
+	  driver.findElement(By.cssSelector("a[name='login']")).click();
+	  Thread.sleep(1000);
+	  
+	  Thread.sleep(1000);
+	  WebElement azureSignInBtn = driver.findElement(By.xpath("//button[contains(text(),'Azure Sign In')]"));
+	  Assert.assertEquals(true, azureSignInBtn.isDisplayed());
+	  Thread.sleep(2000);
+	  
+	  // close browser and driver
+	  driver.close();
+	  driver.quit();
+  }
+
+}

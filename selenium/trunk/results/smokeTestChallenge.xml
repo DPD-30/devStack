@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="14" failures="0" time="97.852">
+  <testsuite name="Navigation" errors="0" failures="0" skipped="0" timestamp="2020-09-23T13:54:13" time="97.343" tests="14">
+    <testcase classname="Navigation adminCardsPage" name="Navigation adminCardsPage" time="6.362">
+    </testcase>
+    <testcase classname="Navigation adminTemplateLibraryPage" name="Navigation adminTemplateLibraryPage" time="6.291">
+    </testcase>
+    <testcase classname="Navigation adminUsersPage" name="Navigation adminUsersPage" time="6.289">
+    </testcase>
+    <testcase classname="Navigation appSettingsPage" name="Navigation appSettingsPage" time="6.34">
+    </testcase>
+    <testcase classname="Navigation casesPage" name="Navigation casesPage" time="6.532">
+    </testcase>
+    <testcase classname="Navigation dashboardPage" name="Navigation dashboardPage" time="6.354">
+    </testcase>
+    <testcase classname="Navigation claimsPage" name="Navigation claimsPage" time="6.393">
+    </testcase>
+    <testcase classname="Navigation homePage" name="Navigation homePage" time="6.209">
+    </testcase>
+    <testcase classname="Navigation loginPage" name="Navigation loginPage" time="6.291">
+    </testcase>
+    <testcase classname="Navigation weatherPage" name="Navigation weatherPage" time="6.343">
+    </testcase>
+    <testcase classname="Navigation preferencesPage" name="Navigation preferencesPage" time="6.377">
+    </testcase>
+    <testcase classname="Navigation questionnairePage" name="Navigation questionnairePage" time="6.29">
+    </testcase>
+    <testcase classname="Navigation reportsPage" name="Navigation reportsPage" time="6.202">
+    </testcase>
+    <testcase classname="Navigation talliesPage" name="Navigation talliesPage" time="6.343">
+    </testcase>
+  </testsuite>
+</testsuites>

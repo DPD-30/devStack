@@ -1,0 +1,16 @@
+#az group delete --name $InfrastructureRG --no-wait --yes
+az group delete --name $AKSrg --no-wait --yes
+az group delete --name $APPCIrg --no-wait --yes
+az group delete --name $APPDEVrg --no-wait --yes
+az group delete --name $APPTESTrg --no-wait --yes
+az group delete --name $APPPRODrg --no-wait --yes
+
+kubectl config unset users.clusterUser_CACI-CICD-RG_CACI-AKS-CICD
+kubectl config unset clusters.CACI-AKS-CICD
+kubectl config unset contexts.CACI-AKS-CICD
+
+. ./infrastructure/parameters.sh
+#az ad app credential delete --credential-description 'AKS_access' --id $SP_Client_ID
+jfrog rt c delete caci
+
+az group list | grep CACI

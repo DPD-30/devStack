@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RoutingPublic matches snapshot 1`] = `
+<div>
+  mock page public home
+</div>
+`;

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/caciuser/LocalDev/caci/challengeDEV/challenge/selenium/trunk/SeleniumTestNG/caciChallenge/lib/byte-buddy-1.8.15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/caciuser/LocalDev/caci/challengeDEV/challenge/selenium/trunk/SeleniumTestNG/caciChallenge/lib/client-combined-3.141.59.jar"/>
+	<classpathentry kind="lib" path="C:/Users/caciuser/LocalDev/caci/challengeDEV/challenge/selenium/trunk/SeleniumTestNG/caciChallenge/lib/client-combined-3.141.59-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/caciuser/LocalDev/caci/challengeDEV/challenge/selenium/trunk/SeleniumTestNG/caciChallenge/lib/commons-exec-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/caciuser/LocalDev/caci/challengeDEV/challenge/selenium/trunk/SeleniumTestNG/caciChallenge/lib/extentreports-2.40.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/caciuser/LocalDev/caci/challengeDEV/challenge/selenium/trunk/SeleniumTestNG/caciChallenge/lib/freemarker-2.3.30.jar"/>
+	<classpathentry kind="lib" path="C:/Users/caciuser/LocalDev/caci/challengeDEV/challenge/selenium/trunk/SeleniumTestNG/caciChallenge/lib/guava-25.0-jre.jar"/>
+	<classpathentry kind="lib" path="C:/Users/caciuser/LocalDev/caci/challengeDEV/challenge/selenium/trunk/SeleniumTestNG/caciChallenge/lib/jcommander-1.78.jar"/>
+	<classpathentry kind="lib" path="C:/Users/caciuser/LocalDev/caci/challengeDEV/challenge/selenium/trunk/SeleniumTestNG/caciChallenge/lib/jsoup-1.13.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/caciuser/LocalDev/caci/challengeDEV/challenge/selenium/trunk/SeleniumTestNG/caciChallenge/lib/okhttp-3.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/caciuser/LocalDev/caci/challengeDEV/challenge/selenium/trunk/SeleniumTestNG/caciChallenge/lib/okio-1.14.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/caciuser/LocalDev/caci/challengeDEV/challenge/selenium/trunk/SeleniumTestNG/caciChallenge/lib/selenium-server-standalone-3.141.59.jar"/>
+	<classpathentry kind="lib" path="C:/Users/caciuser/LocalDev/caci/challengeDEV/challenge/selenium/trunk/SeleniumTestNG/caciChallenge/lib/sqlite-jdbc-3.32.3.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/caciuser/LocalDev/caci/challengeDEV/challenge/selenium/trunk/SeleniumTestNG/caciChallenge/lib/testng-7.3.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

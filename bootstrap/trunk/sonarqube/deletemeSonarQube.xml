@@ -1,0 +1,6 @@
+<org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl plugin=plain-credentials@1.7>
+  <scope>GLOBAL</scope>
+  <id>SonarQube</id>
+  <description>sonarqube</description>
+  <secret>:[{"msg":"A user token for login 'admin'</secret>
+</org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl>

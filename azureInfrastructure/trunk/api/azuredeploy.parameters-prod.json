@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "hostingPlanName": {
+      "value": "CACI-Prod"
+    },
+    "webSiteName": {
+      "value": "CACI-API-Prod"
+    },
+    "sqlserverName": {
+      "value": "CACIDB-Prod"      
+    },
+    "databaseName":{
+      "value": "CACIDB"
+    },
+    "environment":{
+      "value": "Production"
+    },
+    "sqlAdministratorLogin": {
+      "value": "CACI_ADMIN"
+    },
+    "skuName": {
+      "value": "S1"
+    },
+    "UIcorsAllowedOrigins": {
+      "value": "https://cacichallenge.z2.web.core.usgovcloudapi.net"
+    },
+    "APIMGTcorsAllowedOrigins": {
+      "value": "https://caci-apimgt-prod.azure-api.us"
+    }
+  }
+}

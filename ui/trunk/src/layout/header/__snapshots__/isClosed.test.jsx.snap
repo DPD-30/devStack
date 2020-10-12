@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LayoutHeaderIsClosed matches snapshot 1`] = `
+<div class="header"
+     data-reactroot
+>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="appName col-8">
+        CACI Challenge App
+      </div>
+      <div class="userName col-4">
+      </div>
+    </div>
+  </div>
+</div>
+`;

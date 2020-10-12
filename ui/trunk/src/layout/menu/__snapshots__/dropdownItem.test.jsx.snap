@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LayoutMenuDropdownItem should match snapshot 1`] = `
+<a name="mockname"
+   tabindex="0"
+   role="menuitem"
+   class="dropdown-item"
+   href="#/mock"
+>
+  Mock Link
+</a>
+`;

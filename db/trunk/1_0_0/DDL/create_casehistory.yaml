@@ -1,0 +1,78 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  createTable-CaseHistory  
+     author:  Ananda  
+     changes:  
+     -  createTable:  
+          tableName:   CaseHistory  
+          columns:  
+            - column:  
+                 name:  CaseHistoryID  
+                 type:  int identity(1,1)
+                 autoIncrement: true
+                 constraints:
+                   nullable: false  
+            - column:  
+                 name:  Description
+                 type:  nvarchar(max)
+                 constraints:
+                   nullable: true 
+            - column:  
+                 name:  ActionID
+                 type:  int
+                 constraints:
+                   nullable: false 
+            - column:  
+                 name:  CaseID
+                 type:  int
+                 constraints:
+                   nullable: false 
+            - column:  
+                 name:  CreatedDate
+                 type:  datetime
+                 constraints:
+                   nullable: true 
+          remarks:  A String  
+          schemaName:  inv
+     
+-  changeSet:  
+     id:  addPrimaryKey-CaseHistory  
+     author:  Ananda
+     changes:  
+     -  addPrimaryKey:  
+         clustered:  true  
+         columnNames:  CaseHistoryID  
+         constraintName:  PK_CaseHistory  
+         schemaName:  inv
+         tableName:  CaseHistory  
+         validate:  true
+-  changeSet:  
+     id:  addForeignKey-CaseHistory
+     author:  Ananda  
+     changes:  
+     -  addForeignKeyConstraint:
+          baseColumnNames:  ActionID  
+          baseTableName:  CaseHistory  
+          baseTableSchemaName:  inv
+          constraintName:  fk_CaseHistory_Action 
+          onDelete:  CASCADE  
+          onUpdate:  RESTRICT  
+          referencedColumnNames:  ActionID  
+          referencedTableName:  Action  
+          referencedTableSchemaName:  inv
+          validate:  true
+-  changeSet:  
+     id:  addForeignKey-FK_CaseHistory_Case
+     author:  Ananda  
+     changes:  
+     -  addForeignKeyConstraint:
+          baseColumnNames:  CaseID  
+          baseTableName:  CaseHistory  
+          baseTableSchemaName:  inv
+          constraintName:  FK_CaseHistory_Case 
+          onDelete:  CASCADE  
+          onUpdate:  RESTRICT  
+          referencedColumnNames:  CaseID  
+          referencedTableName:  Case  
+          referencedTableSchemaName:  inv
+          validate:  true

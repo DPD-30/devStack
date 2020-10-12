@@ -1,0 +1,342 @@
+{
+  "id": "74496497-3ba0-4348-8a4d-145eec853bca",
+  "version": "2.0",
+  "name": "atoChallenge",
+  "url": "http://localhost:3000/#/",
+  "tests": [{
+    "id": "29289b82-1a67-42c6-81c9-0d26c6449f8a",
+    "name": "viewDashboard",
+    "commands": [{
+      "id": "50ec6776-b02e-4d47-a318-9e1626a0a827",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ca309060-7b31-44bf-a948-8cf4a7a5eeef",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1056x660",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "87695108-d28a-4a74-b0e7-960857e3bae3",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Dashboard",
+      "targets": [
+        ["linkText=Dashboard", "linkText"],
+        ["css=.nav-item:nth-child(9) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Dashboard')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div/ul/li[9]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#/dashboard')]", "xpath:href"],
+        ["xpath=//li[9]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Dashboard')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "5db3f407-464f-4c73-b605-54d1695fa8b4",
+    "name": "addApplication",
+    "commands": [{
+      "id": "fc7bf58c-7725-410a-a449-16efb6b7462f",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2286af95-fc99-4c36-96ac-d88789de5efd",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1296x696",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "684aa12f-4b34-4020-92f2-d7e764e3a1b4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Dashboard",
+      "targets": [
+        ["linkText=Dashboard", "linkText"],
+        ["css=.nav-item:nth-child(9) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Dashboard')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div/ul/li[9]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#/dashboard')]", "xpath:href"],
+        ["xpath=//li[9]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Dashboard')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "96a27d06-7033-4b58-b7e2-63b022e5ab39",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=Dashboard",
+      "targets": [
+        ["linkText=Dashboard", "linkText"],
+        ["css=.nav-item:nth-child(9) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Dashboard')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div/ul/li[9]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#/dashboard')]", "xpath:href"],
+        ["xpath=//li[9]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Dashboard')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3c3c1ce-416f-4b2d-87fa-8aeb5c705445",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "linkText=Dashboard",
+      "targets": [
+        ["linkText=Dashboard", "linkText"],
+        ["css=.nav-item:nth-child(9) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Dashboard')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/div/ul/li[9]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#/dashboard')]", "xpath:href"],
+        ["xpath=//li[9]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Dashboard')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "159d215e-ff9f-4001-ab79-afaa692a1373",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/div/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ced1b76b-0980-42af-bbe8-fd226e6e5988",
+      "comment": "",
+      "command": "click",
+      "target": "id=applicationName",
+      "targets": [
+        ["id=applicationName", "id"],
+        ["name=applicationName", "name"],
+        ["css=#applicationName", "css:finder"],
+        ["xpath=//textarea[@id='applicationName']", "xpath:attributes"],
+        ["xpath=//div[2]/div/textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e427ec6-fe4d-48f1-98c9-e8fd20e057b6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(2)",
+      "targets": [
+        ["css=.row:nth-child(2)", "css:finder"],
+        ["xpath=//form/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "89baf4da-07fc-4e13-92b7-20f7a6d5cc03",
+      "comment": "",
+      "command": "type",
+      "target": "id=applicationName",
+      "targets": [
+        ["id=applicationName", "id"],
+        ["name=applicationName", "name"],
+        ["css=#applicationName", "css:finder"],
+        ["xpath=//textarea[@id='applicationName']", "xpath:attributes"],
+        ["xpath=//div[2]/div/textarea", "xpath:position"]
+      ],
+      "value": "hk"
+    }, {
+      "id": "7097ed93-16c6-46a1-9495-60a36d990875",
+      "comment": "",
+      "command": "click",
+      "target": "id=systemOwner",
+      "targets": [
+        ["id=systemOwner", "id"],
+        ["name=systemOwner", "name"],
+        ["css=#systemOwner", "css:finder"],
+        ["xpath=//textarea[@id='systemOwner']", "xpath:attributes"],
+        ["xpath=//div[3]/div/textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "94df060d-abfe-4107-ab6c-313e682f2832",
+      "comment": "",
+      "command": "type",
+      "target": "id=systemOwner",
+      "targets": [
+        ["id=systemOwner", "id"],
+        ["name=systemOwner", "name"],
+        ["css=#systemOwner", "css:finder"],
+        ["xpath=//textarea[@id='systemOwner']", "xpath:attributes"],
+        ["xpath=//div[3]/div/textarea", "xpath:position"]
+      ],
+      "value": "hk"
+    }, {
+      "id": "27c5b876-c595-4c71-9504-6c6950cbb74a",
+      "comment": "",
+      "command": "click",
+      "target": "id=poc",
+      "targets": [
+        ["id=poc", "id"],
+        ["name=poc", "name"],
+        ["css=#poc", "css:finder"],
+        ["xpath=//textarea[@id='poc']", "xpath:attributes"],
+        ["xpath=//div[4]/div/textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c07ee596-507c-4a91-9cfe-ad48b851983a",
+      "comment": "",
+      "command": "type",
+      "target": "id=poc",
+      "targets": [
+        ["id=poc", "id"],
+        ["name=poc", "name"],
+        ["css=#poc", "css:finder"],
+        ["xpath=//textarea[@id='poc']", "xpath:attributes"],
+        ["xpath=//div[4]/div/textarea", "xpath:position"]
+      ],
+      "value": "hk"
+    }, {
+      "id": "e27fdbf3-dbf2-4e36-9c07-c81a2c6c9bd9",
+      "comment": "",
+      "command": "click",
+      "target": "id=iMatrixNumber",
+      "targets": [
+        ["id=iMatrixNumber", "id"],
+        ["name=iMatrixNumber", "name"],
+        ["css=#iMatrixNumber", "css:finder"],
+        ["xpath=//textarea[@id='iMatrixNumber']", "xpath:attributes"],
+        ["xpath=//div[5]/div/textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fbfd89b4-1777-4d64-bc89-c935c9d0f4cb",
+      "comment": "",
+      "command": "type",
+      "target": "id=iMatrixNumber",
+      "targets": [
+        ["id=iMatrixNumber", "id"],
+        ["name=iMatrixNumber", "name"],
+        ["css=#iMatrixNumber", "css:finder"],
+        ["xpath=//textarea[@id='iMatrixNumber']", "xpath:attributes"],
+        ["xpath=//div[5]/div/textarea", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "bc6d9bb8-dcfb-41f9-b5d0-b533f65ee069",
+      "comment": "",
+      "command": "click",
+      "target": "id=expiration",
+      "targets": [
+        ["id=expiration", "id"],
+        ["name=expiration", "name"],
+        ["css=#expiration", "css:finder"],
+        ["xpath=//input[@id='expiration']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "952c8d1e-1d18-44c7-ac4c-1ab9bb28129d",
+      "comment": "",
+      "command": "type",
+      "target": "id=expiration",
+      "targets": [
+        ["id=expiration", "id"],
+        ["name=expiration", "name"],
+        ["css=#expiration", "css:finder"],
+        ["xpath=//input[@id='expiration']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2020-09-30"
+    }, {
+      "id": "d1e06539-6f6f-471a-8796-ab0386b4bb96",
+      "comment": "",
+      "command": "click",
+      "target": "id=phaseDropDown",
+      "targets": [
+        ["id=phaseDropDown", "id"],
+        ["name=select", "name"],
+        ["css=#phaseDropDown", "css:finder"],
+        ["xpath=//select[@id='phaseDropDown']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cd7e9c65-9a4b-4004-8f43-5eaab4ee0903",
+      "comment": "",
+      "command": "select",
+      "target": "id=phaseDropDown",
+      "targets": [],
+      "value": "label=Phase 1"
+    }, {
+      "id": "2579f56c-8853-4317-a2a8-ea107ea49021",
+      "comment": "",
+      "command": "click",
+      "target": "id=phaseDropDown",
+      "targets": [
+        ["id=phaseDropDown", "id"],
+        ["name=select", "name"],
+        ["css=#phaseDropDown", "css:finder"],
+        ["xpath=//select[@id='phaseDropDown']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fcd34e3f-1350-446f-9636-f1489a63a4c9",
+      "comment": "",
+      "command": "click",
+      "target": "id=statusDropDown",
+      "targets": [
+        ["id=statusDropDown", "id"],
+        ["css=#statusDropDown", "css:finder"],
+        ["xpath=//select[@id='statusDropDown']", "xpath:attributes"],
+        ["xpath=//div[8]/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b8b52fe7-76a0-45f7-b6c4-6d4451205381",
+      "comment": "",
+      "command": "select",
+      "target": "id=statusDropDown",
+      "targets": [],
+      "value": "label=Good Standing"
+    }, {
+      "id": "92332101-55f5-45cc-8801-0f39fe88b5a9",
+      "comment": "",
+      "command": "click",
+      "target": "id=statusDropDown",
+      "targets": [
+        ["id=statusDropDown", "id"],
+        ["css=#statusDropDown", "css:finder"],
+        ["xpath=//select[@id='statusDropDown']", "xpath:attributes"],
+        ["xpath=//div[8]/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab3da35c-865a-44ac-86a2-8b800cecd41a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(1)",
+      "targets": [
+        ["css=.btn:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Save')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "8c5e28d4-d95c-4d92-b002-1d0850521cc8",
+    "name": "Dashboard",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["29289b82-1a67-42c6-81c9-0d26c6449f8a", "5db3f407-464f-4c73-b605-54d1695fa8b4"]
+  }],
+  "urls": ["http://localhost:3000/#/"],
+  "plugins": []
+}

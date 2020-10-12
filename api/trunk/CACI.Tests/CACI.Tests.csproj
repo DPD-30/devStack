@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Web\Controllers\Account\**" />
+    <EmbeddedResource Remove="Web\Controllers\Account\**" />
+    <None Remove="Web\Controllers\Account\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
+    <PackageReference Include="FluentAssertions" Version="5.10.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.6" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.6" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="Moq" Version="4.14.5" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.1.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.1.0" />
+    <PackageReference Include="coverlet.collector" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CACI.BAL\CACI.BAL.csproj" />
+    <ProjectReference Include="..\CACI.DAL\CACI.DAL.csproj" />
+    <ProjectReference Include="..\CACI.Email\CACI.Email.csproj" />
+    <ProjectReference Include="..\CACI.ViewModels\CACI.ViewModels.csproj" />
+    <ProjectReference Include="..\CACI.Web\CACI.Web.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="CACI.DAL">
+      <HintPath>..\CACI.DAL\bin\Debug\netcoreapp3.1\CACI.DAL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

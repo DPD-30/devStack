@@ -1,0 +1,102 @@
+pipeline {
+    agent {
+      label 'dotnetCore'  
+     }
+    environment {
+        SonarScannerDotNetHome =  tool name: 'sonarqube_dotnetcore', type: 'hudson.plugins.sonar.MsBuildSQRunnerInstallation'
+        DOTNET_ROLL_FORWARD = 'Major'
+    }
+  stages {
+    stage('unit test'){
+        steps{
+            warnError('Unit test failuer'){
+                sh 'dotnet test --collect:"XPlat Code Coverage" /p:CollectCoverage=true --logger trx -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover'
+            }
+        }
+        
+        
+    }  
+    stage('Build') {
+        steps{
+            //todo fix sonar.
+           withSonarQubeEnv('CACI-sonarqube') {
+             
+            sh 'dotnet --version'
+            // start sonarqube capture
+            sh 'dotnet ${SonarScannerDotNetHome}/SonarScanner.MSBuild.dll begin /k:"CACI-API" /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml" /d:sonar.coverage.exclusions="**Tests*.cs" /d:sonar.cs.vstest.reportsPaths="**/*.trx"'
+                sh 'dotnet build'
+                sh 'dotnet publish -p:PublishProfile=FolderProfile --output api'
+            // end sonarqube capture 
+            sh 'dotnet ${SonarScannerDotNetHome}/SonarScanner.MSBuild.dll end'
+           }
+        }
+    }
+
+    stage("Quality Gate") {
+        steps {
+            timeout(time: 1, unit: 'HOURS') {
+                warnError('Sonar Quality failure'){
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+    }   
+    stage('Deploy to CI'){
+        steps{
+            azureWebAppPublish azureCredentialsId: 'Azure',
+                resourceGroup: "CACI-APP-CI-RG", appName: "CACI-API-CI",
+                filePath: '**', sourceDirectory: 'api/', targetDirectory: '',
+                deployOnlyIfSuccessful: false
+        }
+        
+        
+    } 
+     
+    stage('Deploy to Dev'){
+        steps{
+            azureWebAppPublish azureCredentialsId: 'Azure',
+                resourceGroup: "CACI-APP-DEV-RG", appName: "CACI-API-DEV",
+                filePath: '**', sourceDirectory: 'api/', targetDirectory: '',
+                deployOnlyIfSuccessful: false
+        }
+        
+        
+    }  
+    stage('Artifactory Publish'){
+        steps{
+           script{
+                def settings = readJSON file: 'CACI.Web/appsettings.json'
+                env.uploadspec = """
+{
+                    "files": [
+                        {
+                        "pattern": "archive/API.tgz",
+                        "target": "CACI-BETA/API/${settings.Version}+${env.BUILD_NUMBER}/"
+                        }
+                    ]
+                }
+                """ 
+            }
+            
+            sh 'mkdir archive'
+            dir("api")
+            {
+                sh 'tar -czf ../archive/API.tgz *'
+            }
+            rtBuildInfo (
+                captureEnv: true       
+            )
+            rtUpload (
+                serverId: 'CACI-Artifactory',
+                spec: "${env.uploadspec}"
+            )
+            rtPublishBuildInfo (
+                serverId: 'CACI-Artifactory'
+            )
+        }
+     
+    }
+
+  }
+   
+}

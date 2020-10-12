@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svn
+  labels:
+    app: svn
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: svn
+  template:
+    metadata:
+      labels:
+        app: svn
+    spec:
+      containers:
+      - name: svn1
+        image: elleflorio/svn-server:latest
+        volumeMounts:
+          - name: svnconfig
+            mountPath: /etc/subversion
+          - name: svndata
+            mountPath: /home/svn
+        ports:
+          - containerPort: 80
+      volumes:
+        - name: svnconfig
+          persistentVolumeClaim:
+          claimName: svnconfig
+        - name: svndata
+          persistentVolumeClaim:
+          claimName: svndata

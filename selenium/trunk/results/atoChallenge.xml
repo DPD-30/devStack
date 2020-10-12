@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="2" failures="0" time="22.352">
+  <testsuite name="Dashboard" errors="0" failures="0" skipped="0" timestamp="2020-09-22T13:37:33" time="21.881" tests="2">
+    <testcase classname="Dashboard viewDashboard" name="Dashboard viewDashboard" time="6.519">
+    </testcase>
+    <testcase classname="Dashboard addApplication" name="Dashboard addApplication" time="7.353">
+    </testcase>
+  </testsuite>
+</testsuites>

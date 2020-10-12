@@ -1,0 +1,9 @@
+package pom;
+
+public class loginLogout {
+	
+	public loginLogout() {
+		
+	}
+
+}

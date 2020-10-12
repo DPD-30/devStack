@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LayoutBurger matches snapshot 1`] = `
+<button class="headerBurger btn btn-secondary"
+        data-reactroot
+>
+  <span aria-hidden="true"
+        class="fa fa-bars"
+  >
+  </span>
+</button>
+`;

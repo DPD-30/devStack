@@ -1,0 +1,13 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  alterTable-Application  
+     author:  Ananda  
+     changes:  
+     -  addColumn:  
+          tableName:   Application  
+          columns:  
+            -  column:  
+                 name:  Expiration  
+                 type:  datetime getdate()
+                 constraints:
+                   nullable: false

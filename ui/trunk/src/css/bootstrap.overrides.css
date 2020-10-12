@@ -1,0 +1,163 @@
+/*
+    NOTE: this overwrites the core bootstrap styling!
+*/
+button.btn.btn-outline-primary,
+button.btn.btn-outline-secondary,
+button.btn.btn-outline-success,
+button.btn.btn-outline-info,
+button.btn.btn-outline-warning,
+button.btn.btn-outline-danger {
+    background-color: #fff;
+}
+
+button.btn.btn-danger {
+    background-color: #C73515;
+    color: #fff !important;
+    border-color: #A51303;
+}
+
+button.btn.btn-primary {
+    background-color: #0A78D1;
+    color: #fff !important;
+    border-color: #0856B0;
+}
+
+button.btn.btn-link {
+    background-color: #fff;
+    color: #0A78D1 !important;
+}
+
+button.btn.btn-secondary {
+    background-color: #88C5FF;
+    color: #000 !important;
+    border-color: #88C5FF;
+}
+
+
+nav.navbar.bg-dark {
+    background-color: #19476a !important;
+    padding: 1em !important;
+}
+
+nav.navbar.bg-dark div ul.navbar-nav li.nav-item a {
+    color: #fff !important;
+    font-size: 24px;
+}
+
+nav.navbar.bg-dark div ul.navbar-nav li.nav-item a.dropdown-item {
+    background-color: #19476a !important;
+}
+
+
+div.dropdown-menu.show {
+    padding: 0;
+}
+
+
+h1 {
+    font-size: 32px !important;
+    color: #19476a !important;
+    font-weight: 900 !important;
+}
+
+h2 {
+    font-size: 28px !important;
+    color: #0a78d1 !important;
+    font-weight: 900 !important;
+}
+
+h3 {
+    font-size: 20px !important;
+    color: #000 !important;
+    font-weight: 700 !important;
+}
+
+h4 {
+    font-size: 16px !important;
+    color: #000 !important;
+    font-weight: 900 !important;
+}
+
+
+table.table thead tr {
+    background-color: #cafceb !important;
+    color: #000 !important;
+    font-weight: bold !important;
+}
+
+table.table tbody tr {
+    background-color: #fff !important;
+}
+
+table.table tbody tr:nth-child(2n) {
+    background-color: #c8e8ff !important;
+}
+
+table.table thead tr th.date,
+table.table tbody tr td.date {
+    text-align: center !important;
+}
+
+table.table thead tr th.numericSameLength,
+table.table tbody tr td.numericSameLength {
+    text-align: center !important;
+}
+
+table.table thead tr th.numericVariedLength,
+table.table tbody tr td.numericVariedLength {
+    text-align: right !important;
+}
+
+table.table tbody tr:hover td {
+    background-color: #ddd !important;
+}
+
+
+div.alert.alert-light {
+    color: #707070 !important;
+}
+
+div.alert.alert-warning {
+    color: #6a3519 !important;
+}
+
+div.alert.alert-primary {
+    background-color: #cce6ff !important;
+}
+
+div.alert.alert-success {
+    background-color: #e9f4d4 !important;
+}
+
+
+div.card.bg-primary div.card-body h4,
+div.card.bg-danger div.card-body h4,
+div.card.bg-info div.card-body h4,
+div.card.bg-dark div.card-body h4,
+div.card.bg-secondary div.card-body h4 {
+    color: #fff !important;
+}
+
+div.card.bg-warning div.card-header,
+div.card.bg-warning div.card-body,
+div.card.bg-success div.card-header,
+div.card.bg-success div.card-body {
+    color: #000 !important;
+}
+
+
+button.btn.btn-outline-warning,
+button.btn.btn-warning {
+    color: #000 !important;
+}
+
+
+button.navbar-toggler span.fa {
+    color: #fff !important;
+    font-size: 24px !important;
+}
+
+
+div.collapse.show.navbar-collapse ul.navbar-nav {
+    background-color: #19476a !important;
+}

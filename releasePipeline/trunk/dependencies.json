@@ -1,0 +1,25 @@
+{
+    "files": [
+        {
+            "build": "CACI :: challenge :: ui :: trunk/1",
+            "target": "artifacts",
+            "flat": "true"           
+        },
+        {
+            "build": "CACI :: challenge :: db :: trunk/1",
+            "target": "artifacts",
+            "flat": "true"
+        },
+        {
+            "build": "CACI :: challenge :: api :: trunk/1",
+            "target": "artifacts",
+            "flat": "true"
+        },
+        {
+            "build": "CACI :: challenge :: selenium :: trunk/1",
+            "target": "artifacts",
+            "flat": "true"
+        }
+
+    ]
+}

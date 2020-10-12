@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LayoutHeaderTransition matches snapshot 1`] = `
+<div style="position:absolute;z-index:99;width:100%"
+     data-reactroot
+>
+  <div class="animated fadeInDown"
+       style="animation-delay:0ms;animation-duration:850ms;pointer-events:all"
+  >
+  </div>
+</div>
+`;

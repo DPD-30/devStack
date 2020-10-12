@@ -1,0 +1,15 @@
+helm install svn .\svn 
+#htpass file need to be created
+kubectl exec dev-svn-svn -t -- htpasswd -cb /etc/subversion/passwd daughertydp CACI4thewin
+kubectl exec dev-svn-svn -t -- htpasswd -b /etc/subversion/passwd jenkins CACI4thewin
+kubectl exec dev-svn-svn -t -- htpasswd -b /etc/subversion/passwd sonarqube CACI4thewin
+kubectl exec dev-svn-svn -t -- rm -rf /home/svn/lost\+found
+kubectl exec dev-svn-svn -t -- svnadmin create /home/svn/caci
+kubectl exec dev-svn-svn -t -- chmod -R 777 /home/svn
+kubectl cp subversion-access-control dev-svn-svn:/etc/subversion/subversion-access-control
+
+----
+
+
+svnadmin create /home/svn/caci
+chmod -R 777 /home/svn/caci

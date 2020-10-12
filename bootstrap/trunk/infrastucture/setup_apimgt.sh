@@ -1,0 +1,5 @@
+#todo move to end of bootstrap2
+az deployment group create --resource-group $APPDEVrg --name DEV_APIMGT --template-file ../../../azureInfrastructure/trunk/api-mgt/azuredeploy.json  --parameters @../../../azureInfrastructure/trunk/api-mgt/azuredeploy.parameters-dev.json --no-wait
+az deployment group create --resource-group $APPCIrg --name CI_APIMGT --template-file ../../../azureInfrastructure/trunk/api-mgt/azuredeploy.json  --parameters @../../../azureInfrastructure/trunk/api-mgt/azuredeploy.parameters-ci.json --no-wait
+az deployment group create --resource-group $APPTESTrg --name TEST_APIMGT --template-file ../../../azureInfrastructure/trunk/api-mgt/azuredeploy.json  --parameters @../../../azureInfrastructure/trunk/api-mgt/azuredeploy.parameters-test.json --no-wait
+az deployment group create --resource-group $APPPRODrg --name Prod_APIMGT --template-file ../../../azureInfrastructure/trunk/api-mgt/azuredeploy.json  --parameters @../../../azureInfrastructure/trunk/api-mgt/azuredeploy.parameters-prod.json --no-wait

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PagesStatCard should match snapshot 1`] = `
+<div class="card"
+     data-reactroot
+>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-5">
+        <div class="statIcon">
+          <span>
+          </span>
+        </div>
+      </div>
+      <div class="col-7">
+        <div class="statCard">
+          <p class="statTitle">
+          </p>
+          <p class="statValue">
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="statFooterBGColor card-footer">
+      <div class="statFooterColor">
+      </div>
+    </div>
+  </div>
+</div>
+`;

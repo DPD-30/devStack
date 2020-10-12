@@ -1,0 +1,68 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  createTable-CaseSubject  
+     author:  Ananda  
+     changes:  
+     -  createTable:  
+          tableName:   CaseSubject  
+          columns:  
+            - column:  
+                 name:  CaseSubjectID  
+                 type:  int identity(1,1)
+                 autoIncrement: true
+                 constraints:
+                   nullable: false  
+            - column:  
+                 name:  SubjectID
+                 type:  int
+                 constraints:
+                   nullable: false 
+            - column:  
+                 name:  CaseID
+                 type:  int
+                 constraints:
+                   nullable: false 
+          remarks:  Case Subject 
+          schemaName:  inv
+     
+-  changeSet:  
+     id:  addPrimaryKey-CaseSubject  
+     author:  Ananda
+     changes:  
+     -  addPrimaryKey:  
+         clustered:  true  
+         columnNames:  CaseSubjectID  
+         constraintName:  PK_CaseSubject 
+         schemaName:  inv
+         tableName:  CaseSubject  
+         validate:  true
+-  changeSet:  
+     id:  addForeignKey-FK_CaseSubject_Case 
+     author:  Ananda 
+     changes:  
+     -  addForeignKeyConstraint:
+          baseColumnNames:  CaseID  
+          baseTableName:  CaseSubject  
+          baseTableSchemaName:  inv
+          constraintName:  FK_CaseSubject_Case  
+          onDelete:  CASCADE  
+          onUpdate:  RESTRICT  
+          referencedColumnNames:  CaseID 
+          referencedTableName:  Case 
+          referencedTableSchemaName:  inv
+          validate:  true
+     -  changeSet:  
+     id:  addForeignKey-FK_CaseSubject_Subject 
+     author:  Ananda 
+     changes:  
+     -  addForeignKeyConstraint:
+          baseColumnNames:  SubjectID  
+          baseTableName:  CaseSubject  
+          baseTableSchemaName:  inv
+          constraintName:  FK_CaseSubject_Subject  
+          onDelete:  CASCADE  
+          onUpdate:  RESTRICT  
+          referencedColumnNames:  SubjectID 
+          referencedTableName:  Subject 
+          referencedTableSchemaName:  inv
+          validate:  true

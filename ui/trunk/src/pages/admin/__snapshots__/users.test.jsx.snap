@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PagesAdminUsers call handleAddNew 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminUsers can change the handleTextChange 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminUsers can delete 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminUsers can get a blank role if not loaded yet 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminUsers can get a role from the array 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminUsers can handleDoubleClick 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminUsers can handleDoubleClick with null event 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminUsers can handleSave new 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminUsers can handleSave update 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminUsers can handleSave with null event, and do nothing 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminUsers can match snapshot for FAILURE 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminUsers can match snapshot for LOADING 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminUsers can match snapshot for an array of users 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminUsers can match snapshot for nil users 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminUsers can test validation condition 1 (false) 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminUsers can test validation condition 1 (true) 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminUsers matches default snapshot 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminUsers toggles the modal open and closed 1`] = `ReactWrapper {}`;
+
+exports[`PagesAdminUsers toggles the modal open and closed 2`] = `ReactWrapper {}`;

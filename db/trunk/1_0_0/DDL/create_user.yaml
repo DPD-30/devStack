@@ -1,0 +1,90 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  createTable-User  
+     author:  Martin  
+     changes:  
+     -  createTable:  
+          tableName:   User  
+          columns:  
+            - column:  
+                 name:  UserId  
+                 type:  int identity(1,1)
+                 autoIncrement: true
+                 constraints:
+                   nullable: false  
+            -  column:  
+                 name:  FirstName
+                 type:  nvarchar(50)
+                 constraints:
+                   nullable: false
+            - column:  
+                 name:  MiddleName
+                 type:  nvarchar(50) 
+                 constraints:
+                   nullable: true
+            - column:  
+                 name:  LastName  
+                 type:  nvarchar(50) 
+                 constraints:
+                   nullable: false
+            -  column:  
+                 name:  Email
+                 type:  nvarchar(255)
+                 constraints:
+                   nullable: true  
+            -  column:  
+                 name:  Password
+                 type:  nvarchar(255)
+                 constraints:
+                   nullable: true
+            -  column:  
+                 name:  UserName
+                 type:  nvarchar(50)
+                 constraints:
+                   nullable: false 
+            - column:  
+                 name:  IsActive
+                 type:  bit 
+                 defaultValueBoolean:  true
+                 constraints:
+                   nullable: false
+            -  column:  
+                 name:  IsApproved
+                 type:  bit
+                 defaultValueBoolean:  true
+                 constraints:
+                   nullable: false  
+            -  column:  
+                 name:  CreatedDate
+                 type:  DateTime
+                 defaultValueDate: getDate()
+                 constraints:
+                   nullable: false 
+            -  column:  
+                 name:  CreatedUser
+                 type:  nvarchar(50)
+                 constraints:
+                   nullable: true 
+            -  column:  
+                 name:  ModifiedDate
+                 type:  DateTime
+                 defaultValueDate: getDate()
+                 constraints:
+                   nullable: true
+            -  column:  
+                 name:  ModifiedUser
+                 type:  nvarchar(50)
+                 constraints:
+                   nullable: true
+        schemaName:  dbo
+-  changeSet:  
+     id:  addPrimaryKey-UserId  
+     author:  Martin
+     changes:  
+     -  addPrimaryKey:  
+         clustered:  true  
+         columnNames:  UserId 
+         constraintName:  PK_UserId  
+         schemaName:  dbo
+         tableName:  User  
+         validate:  true

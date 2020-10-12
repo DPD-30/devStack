@@ -1,0 +1,101 @@
+pipeline {
+    agent {
+      label 'node'  
+     }
+    environment {
+        SonarScannerDotNetHome =  tool name: 'sonarqube_dotnetcore', type: 'hudson.plugins.sonar.MsBuildSQRunnerInstallation'
+        DOTNET_ROLL_FORWARD = 'Major'
+        CI = "true"
+    }
+  stages {
+    stage('install chromedriver')
+    {   
+        steps{
+                sh "apk update && apk add --no-cache bash \
+        alsa-lib \
+        at-spi2-atk \
+        atk \
+        cairo \
+        cups-libs \
+        dbus-libs \
+        eudev-libs \
+        expat \
+        flac \
+        gdk-pixbuf \
+        glib \
+        libgcc \
+        libjpeg-turbo \
+        libpng \
+        libwebp \
+        libx11 \
+        libxcomposite \
+        libxdamage \
+        libxext \
+        libxfixes \
+        tzdata \
+        libexif \
+        udev \
+        xvfb \
+        zlib-dev \
+        chromium \
+        chromium-chromedriver \
+        openjdk11"
+
+        }
+    }
+    stage('Run Selenium Tests'){
+        steps{
+            //sh 'npm ci'
+            warnError('Selenium Test Failed'){
+            //    sh 'npx selenium-side-runner SeleniumIDE/*.side --server http://selenium-selenium-hub.default:4444/wd/hub --config-file "config.dev.yaml" --base-url "https://cacichallengedev.z2.web.core.usgovcloudapi.net" --output-format=junit --output-directory=results -w 3'    
+                
+                dir('SeleniumTestNG/caciChallenge'){
+                    withCredentials([string(credentialsId: 'SeleniumUser', variable: 'SeleniumUser')]){ 
+                        sh 'java -cp /usr/bin/chromedriver:./lib/*:bin -Dwebdriver.chrome.driver=chromedriver -DnodeURL=http://selenium-selenium-hub.default:4444/wd/hub -Durl=https://cacichallengedev.z2.web.core.usgovcloudapi.net -Dusername=user7@gmail.com -Dpassword=$SeleniumUser org.testng.TestNG challenge-testng.xml'
+                    }
+                
+                }
+            }
+        }
+    }
+    stage('Artifactory Publish'){
+        steps{
+           script{
+                def settings = readJSON file: 'package.json'
+                env.AppVersion = settings.version
+                env.uploadspec = """
+{
+                    "files": [
+                        {
+                        "pattern": "archive/functionaltest.tgz",
+                        "target": "CACI-BETA/functionalTest/${env.BUILD_NUMBER}/"
+                        }
+                    ]
+                }
+                """ 
+            }
+            
+            sh 'mkdir archive'
+            sh 'tar --exclude=./results -czf archive/functionaltest.tgz *'
+            
+            rtBuildInfo (
+                captureEnv: true       
+            )
+            rtUpload (
+                serverId: 'CACI-Artifactory',
+                spec: "${env.uploadspec}"
+            )
+            rtPublishBuildInfo (
+                serverId: 'CACI-Artifactory'
+            )
+        }
+     
+    }
+  }
+  post('Record Test Results') {
+        always{
+            junit 'SeleniumTestNG/caciChallenge/test-output/junitreports/**'
+        }
+  }
+
+}

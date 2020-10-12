@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PagesAppSettingsRow should match snapshot 1`] = `
+<tr data-reactroot>
+  <td>
+    mockname
+  </td>
+  <td>
+    <input type="text"
+           name="value"
+           value
+    >
+  </td>
+  <td>
+    <button type="button"
+            disabled
+            class="btn btn-secondary disabled"
+    >
+      Save
+    </button>
+  </td>
+  <td>
+    <button type="button"
+            class="btn btn-warning"
+    >
+      Delete
+    </button>
+  </td>
+</tr>
+`;

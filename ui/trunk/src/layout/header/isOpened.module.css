@@ -1,0 +1,16 @@
+div.header {
+	padding: 1em 0 0 0;
+	background-color: #fff;
+}
+
+img.logo {
+	height: 2.5em;
+}
+
+div.appName {
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: bold;
+	vertical-align: top;
+	color: #10274e;
+}

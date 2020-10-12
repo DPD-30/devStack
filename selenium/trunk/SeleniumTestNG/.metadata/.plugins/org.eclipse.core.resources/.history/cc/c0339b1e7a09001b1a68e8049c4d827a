@@ -1,0 +1,9 @@
+package pages;
+
+import org.testng.annotations.Test;
+
+public class Home_AzureLogin {
+  @Test
+  public void f() {
+  }
+}

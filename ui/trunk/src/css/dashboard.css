@@ -1,0 +1,60 @@
+
+.fa-check {
+    color: #008000;
+}
+
+.fa-ban {
+    color: #FF0000;
+}
+
+.alignCentered {
+    text-align: center;
+}
+
+.editIcon {
+    width: 25px !important;
+    height: 25px !important;
+    margin-right: 10px;
+    color: rgba(60,179,113);
+}
+
+.deleteIcon {
+    width: 25px !important;
+    height: 25px !important;
+    color: #FF4A55;
+}
+
+.header {
+    margin:45px 15px 40px 40px;
+    color: #0A78D1;
+    font: bold;
+}
+
+.legends {
+    margin-left:10px;
+}
+
+.addButton {
+    float:right;
+    margin-top:50px;
+    margin-right:50px;
+    height:45px;
+}
+
+.addButtonPadding {
+    padding:0;
+}
+
+.tableHeader {
+    background-color: #cafceb;
+    text-align: center;
+    font:bold
+}
+
+.tableHeaderButton {
+    background-color: transparent;
+    color: "#cafceb";
+    font-weight: bold;
+    border:none;
+    cursor: pointer;
+}

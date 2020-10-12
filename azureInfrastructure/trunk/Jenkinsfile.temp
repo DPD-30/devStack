@@ -1,0 +1,27 @@
+pipeline {
+    agent {
+      label 'dotnetCore'  
+     }
+    environment {
+        SonarScannerDotNetHome =  tool name: 'sonarqube_dotnetcore', type: 'hudson.plugins.sonar.MsBuildSQRunnerInstallation'
+        DOTNET_ROLL_FORWARD = 'Major'
+    }
+  stages {
+    stage('deploy ARM Templates to CI'){
+        steps{
+                sh 'chmod 700 ./deploy.ps1'
+                withCredentials([azureServicePrincipal(credentialsId: 'Azure')]){
+                  sh './deploy.ps1 $AZURE_CLIENT_SECRET $AZURE_CLIENT_ID $AZURE_TENANT_ID azuredeploy.parameters-ci.json CACI-APP-CI-RG cacichallengeci CI-DB-Secret' 
+                }
+        }  
+    } 
+
+    // stage('deploy ARM Templates to DEV'){
+    //     steps{
+    //             withCredentials([azureServicePrincipal(credentialsId: 'Azure')]){
+    //               sh './deploy.ps1 $AZURE_CLIENT_SECRET $AZURE_CLIENT_ID $AZURE_TENANT_ID azuredeploy.parameters-dev.json CACI-APP-DEV-RG cacichallengedev Dev-DB-Secret' 
+    //             }
+    //     }  
+    // } 
+  }
+}

@@ -1,0 +1,6 @@
+button.headerBurger {
+    position: absolute;
+    z-index: 999;
+    top: 1em;
+    right: 1em;
+}

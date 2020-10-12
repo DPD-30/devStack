@@ -1,0 +1,133 @@
+package loginLogout;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+
+
+public class loginLogout {
+	WebDriver driver;
+	ExtentReports report;
+	ExtentTest test;
+	
+  @Parameters({ "nodeURL", "url", "username", "password" })
+  @Test
+  public void loginLogoutTest(String nodeURL, String url, String username, String password) throws InterruptedException, MalformedURLException {
+	  report = new ExtentReports("C:\\Users\\caciuser\\LocalDev\\caci\\challengeNew\\selenium\\trunk\\SeleniumTestNG\\caciChallenge");
+	  test = report.startTest("Verify Login and Logout");
+	  // driver, nodeURL
+	  DesiredCapabilities caps = DesiredCapabilities.chrome();
+	  caps.setBrowserName("chrome");
+	  caps.setPlatform(Platform.WINDOWS);
+	  driver = new RemoteWebDriver(new URL(nodeURL), caps);
+	  test.log(LogStatus.INFO, "Starting RemoteWebDriver connection");
+
+	  // maximize browser
+	  driver.manage().window().maximize();
+	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	  test.log(LogStatus.INFO, "Miximizing browser window");
+	  
+	  // baseURL
+	  String baseURL = url;
+	  driver.get(baseURL);
+	  test.log(LogStatus.INFO, "Navigating to: "+baseURL);
+	   
+	  // grab parent window handle
+	  String parentWindow = driver.getWindowHandle();
+	  test.log(LogStatus.INFO, "Grabbing parentWindow handle: "+parentWindow);
+	  Thread.sleep(1000);
+	  
+	  // click 'Login' tab
+	  driver.findElement(By.cssSelector("button[class='burger_headerBurger__3B-Rz btn btn-secondary']")).click();
+	  Thread.sleep(1000);
+	  driver.findElement(By.cssSelector("a[name='login']")).click();
+	  test.log(LogStatus.INFO, "Clicking 'Login' tab");
+	  Thread.sleep(1000);
+	  
+	  // Azure Login
+	  // click 'Azure Sign In' button
+	  driver.findElement(By.xpath("//button[contains(text(),'Azure Sign In')]")).click();
+	  test.log(LogStatus.INFO, "Clicking 'Azure Sign In' button");
+	  Thread.sleep(1000);
+	  
+	  // switch to new window
+	  Set<String> allWindows = driver.getWindowHandles();
+	  test.log(LogStatus.INFO, "Window handles: "+allWindows);
+	  Iterator<String> i = allWindows.iterator();
+	  while(i.hasNext()){
+		  String childWindow = i.next();
+		  if(!childWindow.equalsIgnoreCase(parentWindow)){
+			  driver.switchTo().window(childWindow);
+			  test.log(LogStatus.INFO, "The childWindow is "+childWindow);
+			  test.log(LogStatus.INFO, "Grabbing all window handles and switching to childWindow: "+childWindow);
+		  }
+	  }
+	  Thread.sleep(1000);
+	  
+      // provide credentials
+	  driver.findElement(By.cssSelector("input[name='loginfmt']")).sendKeys(username);
+	  Thread.sleep(1000);
+	  driver.findElement(By.cssSelector("input[id='idSIButton9']")).click();
+	  Thread.sleep(1000);
+	  driver.findElement(By.cssSelector("input[name='passwd']")).sendKeys(password);
+	  Thread.sleep(1000);
+	  driver.findElement(By.cssSelector("input[value='Sign in']")).click();
+	  test.log(LogStatus.INFO, "Providing login credentials");
+	  Thread.sleep(2000);
+	  
+	  // switch back to parent window
+	  driver.switchTo().window(parentWindow);
+	  test.log(LogStatus.INFO, "Switching back to parentWindow: "+parentWindow);
+	  Thread.sleep(2000);
+	  
+	  // ASSERTION: verify user is logged in
+	  Thread.sleep(1000);
+	  WebElement azureSignOutBtn = driver.findElement(By.xpath("//button[contains(text(),'Azure Sign Out')]"));
+	  Assert.assertEquals(true, azureSignOutBtn.isDisplayed());
+	  test.log(LogStatus.INFO, "ASSERTION: verifying user successfully logged in");
+	  Thread.sleep(2000);
+	  
+	  // Azure logout
+	  driver.findElement(By.xpath("//button[contains(text(),'Azure Sign Out')]")).click();
+	  test.log(LogStatus.INFO, "Clicking 'Azure Sign Out' button");
+	  Thread.sleep(2000);
+	  driver.findElement(By.xpath("//small[contains(text(),'"+username+"')]")).click();
+	  Thread.sleep(10000);
+	  
+	  // click 'login' tab
+	  driver.findElement(By.cssSelector("button[class='burger_headerBurger__3B-Rz btn btn-secondary']")).click();
+	  Thread.sleep(1000);
+	  driver.findElement(By.cssSelector("a[name='login']")).click();
+	  test.log(LogStatus.INFO, "Clicking username");
+	  Thread.sleep(1000);
+	  
+	  // ASSERTION: verify user is logged out
+	  WebElement azureSignInBtn = driver.findElement(By.xpath("//button[contains(text(),'Azure Sign In')]"));
+	  Assert.assertEquals(true, azureSignInBtn.isDisplayed());
+	  test.log(LogStatus.INFO, "ASSERTION: verifying user successfully signed out");
+	  Thread.sleep(2000);
+	  
+	  // close browser and driver
+	  driver.close();
+	  driver.quit();
+  }
+  
+  
+
+}

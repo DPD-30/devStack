@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RoutingIndex matches snapshot 1`] = `
+<div>
+  mock routing public
+</div>
+<div>
+  mock routing azure user
+</div>
+<div>
+  mock routing local user
+</div>
+<div>
+  mock routing templates
+</div>
+`;

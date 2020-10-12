@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PagesStatCard should match snapshotrow 1`] = `
+<div class="row"
+     data-reactroot
+>
+</div>
+`;
+
+exports[`match snapshot with populate state varaiables 1`] = `ReactWrapper {}`;
+
+exports[`match snapshot with populate state varaiables 2`] = `ReactWrapper {}`;

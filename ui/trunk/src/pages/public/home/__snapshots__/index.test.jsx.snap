@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PagesHome should match snapshot 1`] = `
+<div style="width:650px;margin:0 auto;text-align:center"
+     class="jumbotron"
+     data-reactroot
+>
+  <h3>
+    Welcome!
+  </h3>
+  <br>
+  <p>
+    This application was created as a demonstration of technical capabilities.
+  </p>
+  <hr>
+  <p>
+    It leverages a modern and extensive technical stack, including:
+  </p>
+  <ul style="width:180px;text-align:left;margin:0 auto">
+    <li>
+      ReactJS
+    </li>
+    <li>
+      Reflux
+    </li>
+    <li>
+      OpenAPI
+    </li>
+    <li>
+      C# WebAPI
+    </li>
+    <li>
+      MS SQL Server
+    </li>
+    <li>
+      MS Azure
+    </li>
+  </ul>
+</div>
+`;

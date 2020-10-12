@@ -1,0 +1,59 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  createTable-Status  
+     author:  Martin  
+     changes:  
+     -  createTable:  
+          tableName:   Status  
+          columns:  
+            - column:  
+                 name:  StatusId  
+                 type:  int identity(1,1)
+                 autoIncrement: true
+                 constraints:
+                   nullable: false  
+            -  column:  
+                 name:  Name
+                 type:  nvarchar(255)
+                 constraints:
+                   nullable: true
+            - column:  
+                 name:  IsActive
+                 type:  bit 
+                 defaultValueBoolean:  true
+                 constraints:
+                   nullable: false
+            -  column:  
+                 name:  CreatedDate
+                 type:  DateTime
+                 defaultValueDate:  getdate()
+                 constraints:
+                   nullable: true 
+            -  column:  
+                 name:  CreatedUser
+                 type:  nvarchar(255)
+                 constraints:
+                   nullable: true 
+            -  column:  
+                 name:  ModifiedDate
+                 type:  DateTime
+                 defaultValueDate:  getdate()
+                 constraints:
+                   nullable: true
+            -  column:  
+                 name:  ModifiedUser
+                 type:  nvarchar(255)
+                 constraints:
+                   nullable: true
+          schemaName:  dbo
+-  changeSet:  
+     id:  addPrimaryKey-StatusId  
+     author:  Martin
+     changes:  
+     -  addPrimaryKey:  
+         clustered:  true  
+         columnNames:  StatusId 
+         constraintName:  PK_StatusId  
+         schemaName:  dbo
+         tableName:  Status  
+         validate:  true

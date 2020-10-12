@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Font Awesome Icon matches snapshot for generic 1`] = `
+<span aria-hidden="true"
+      class="fa fa-foo"
+      data-reactroot
+>
+</span>
+`;
+
+exports[`Font Awesome Icon matches snapshot for special case exclamation point - f12a 1`] = `
+<span aria-hidden="true"
+      class="fa fa-exclamation point"
+      data-reactroot
+>
+</span>
+`;
+
+exports[`Font Awesome Icon matches snapshot for special case hour-glass-half - f252 1`] = `
+<span aria-hidden="true"
+      class="fa fa-hourglass-half"
+      data-reactroot
+>
+</span>
+`;

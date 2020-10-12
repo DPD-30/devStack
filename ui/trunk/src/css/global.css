@@ -1,0 +1,15 @@
+@font-face {
+    font-family: OpenSans;
+    src: url('../fonts/OpenSans-Regular.ttf')
+}
+
+* {
+    font-family: OpenSans, Arial, Sans-Serif;
+}
+
+body {
+    background-color: #f3f3f3;
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+}

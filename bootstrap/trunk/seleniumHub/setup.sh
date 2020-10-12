@@ -1,0 +1,1 @@
+helm upgrade --install selenium stable/selenium --version="1.1.2" -f values.yaml

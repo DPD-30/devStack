@@ -1,0 +1,10 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  dropTable-CrimeReport  
+     author:  Ananda  
+     changes:  
+     -  dropTable:  
+          cascadeConstraints:  true  
+          schemaName:  dbo  
+          tableName:  CrimeReport   
+  

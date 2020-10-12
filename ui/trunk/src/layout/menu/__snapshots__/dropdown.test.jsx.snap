@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LayoutMenuDropdown should match snapshot 1`] = `
+<li class="dropdown nav-item">
+  <a aria-haspopup="true"
+     href="#"
+     class="dropdown-toggle nav-link"
+     aria-expanded="false"
+  >
+    Mock label
+  </a>
+  <div tabindex="-1"
+       role="menu"
+       aria-hidden="true"
+       class="dropdown-menu"
+  >
+    mock children
+  </div>
+</li>
+`;

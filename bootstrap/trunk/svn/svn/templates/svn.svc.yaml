@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    chart: '{{.Chart.Name}}-{{.Chart.Version}}'
+    heritage: '{{.Release.Service}}'
+    name: svn
+    release: '{{.Release.Name}}'
+  name: '{{ template "fullname" . }}-svn'
+  namespace: '{{.Values.svn.namespace}}'
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    name: 'svn'
+  type: '{{.Values.svn.serviceType}}'

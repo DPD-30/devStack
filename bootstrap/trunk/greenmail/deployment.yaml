@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: greenmail
+  name: greenmail
+spec:
+  selector:
+    matchLabels:
+      app: greenmail
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: greenmail
+    spec:
+      containers:
+      - image: greenmail/standalone
+        imagePullPolicy: Always
+        name: standalone
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        ports:
+        - containerPort: 3025
+        - containerPort: 3110
+        - containerPort: 3143
+        - containerPort: 3465
+        - containerPort: 3993
+        - containerPort: 3995
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30

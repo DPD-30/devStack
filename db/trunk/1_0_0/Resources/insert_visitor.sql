@@ -1,0 +1,9 @@
+INSERT INTO VISITOR
+(FirstName,
+LastName,
+MiddleName)
+SELECT DISTINCT
+	NAMEFIRST
+	,NAMELAST
+	,NAMEMID
+FROM WhiteHouseLog

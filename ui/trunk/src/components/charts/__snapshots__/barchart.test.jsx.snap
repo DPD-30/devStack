@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PagesBarChart should match snapshot 1`] = `
+<div class="cardStyle card"
+     data-reactroot
+>
+  <div class="titleContainer">
+    <h4 class="titleStyle">
+    </h4>
+    <p class="subTitleStyle">
+    </p>
+  </div>
+  <div class="card-body">
+    <div class="card-body">
+      <canvas height="150"
+              width="300"
+      >
+      </canvas>
+    </div>
+  </div>
+</div>
+`;

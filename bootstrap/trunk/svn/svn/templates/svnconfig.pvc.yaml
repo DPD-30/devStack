@@ -1,0 +1,25 @@
+{{- if .Values.persistence.svnconfig.enabled -}}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"name":"svnconfig","namespace":"default"},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"8Gi"}},"storageClassName":"default"}}
+    volume.beta.kubernetes.io/storage-provisioner: kubernetes.io/azure-disk
+  finalizers:
+  - kubernetes.io/pvc-protection
+  labels:
+    chart: '{{.Chart.Name}}-{{.Chart.Version}}'
+    heritage: '{{.Release.Service}}'
+    release: '{{.Release.Name}}'
+  name: '{{ template "fullname" . }}-svnconfig'
+  namespace: '{{.Values.persistence.svnconfig.namespace}}'
+spec:
+  accessModes:
+  - '{{.Values.persistence.svnconfig.accessMode}}'
+  resources:
+    requests:
+      storage: 8Gi
+  storageClassName: default
+#  volumeName: '{{.Values.persistence.svnconfig.volumeName}}'
+{{- end -}}

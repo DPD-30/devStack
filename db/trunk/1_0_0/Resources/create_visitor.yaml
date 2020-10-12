@@ -1,0 +1,75 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  createTable-Visitor  
+     author:  Martin  
+     changes:  
+     -  createTable:  
+          tableName:   Visitor  
+          columns:  
+            - column:  
+                 name:  VisitorId  
+                 type:  int identity(1,1)
+                 autoIncrement: true
+                 constraints:
+                   nullable: false  
+            -  column:  
+                 name:  FirstName
+                 type:  nvarchar(50)
+                 constraints:
+                   nullable: true
+            - column:  
+                 name:  MiddleName
+                 type:  nvarchar(50) 
+                 constraints:
+                   nullable: true
+            - column:  
+                 name:  LastName  
+                 type:  nvarchar(50) 
+                 constraints:
+                   nullable: true
+            - column:  
+                 name:  IsActive
+                 type:  bit 
+                 defaultValueBoolean:  true
+                 constraints:
+                   nullable: false
+            -  column:  
+                 name:  IsApproved
+                 type:  bit
+                 defaultValueBoolean:  true
+                 constraints:
+                   nullable: false  
+            -  column:  
+                 name:  CreatedDate
+                 type:  DateTime
+                 defaultValueDate: getDate()
+                 constraints:
+                   nullable: false 
+            -  column:  
+                 name:  CreatedUser
+                 type:  nvarchar(50)
+                 constraints:
+                   nullable: true 
+            -  column:  
+                 name:  ModifiedDate
+                 type:  DateTime
+                 defaultValueDate: getDate()
+                 constraints:
+                   nullable: true
+            -  column:  
+                 name:  ModifiedUser
+                 type:  nvarchar(50)
+                 constraints:
+                   nullable: true
+        schemaName:  dbo
+-  changeSet:  
+     id:  addPrimaryKey-VisitorId  
+     author:  Martin
+     changes:  
+     -  addPrimaryKey:  
+         clustered:  true  
+         columnNames:  VisitorId 
+         constraintName:  PK_VisitorId  
+         schemaName:  dbo
+         tableName:  Visitor  
+         validate:  true

@@ -1,0 +1,53 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  createTable-Case  
+     author:  Ananda  
+     changes:  
+     -  createTable:  
+          tableName:   Case  
+          columns:  
+            - column:  
+                 name:  CaseID  
+                 type:  int identity(1,1)
+                 autoIncrement: true
+                 constraints:
+                   nullable: false  
+            - column:  
+                 name:  Description
+                 type:  nvarchar(200)
+                 constraints:
+                   nullable: true 
+            - column:  
+                 name:  Title
+                 type:  nvarchar(100)
+                 constraints:
+                   nullable: true 
+            - column:  
+                 name:  StatusID
+                 type:  int
+                 constraints:
+                   nullable: false 
+            - column:  
+                 name:  CreatedDate
+                 type:  datetime
+                 constraints:
+                   nullable: true 
+            - column:  
+                 name:  LastModifiedDate
+                 type:  datetime
+                 constraints:
+                   nullable: true
+          remarks:  A String  
+          schemaName:  inv
+     
+-  changeSet:  
+     id:  addPrimaryKey-Case  
+     author:  Ananda
+     changes:  
+     -  addPrimaryKey:  
+         clustered:  true  
+         columnNames:  CaseID  
+         constraintName:  PK_Case  
+         schemaName:  inv
+         tableName:  Case  
+         validate:  true

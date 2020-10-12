@@ -1,0 +1,126 @@
+pipeline {
+    agent {
+        label 'node'  
+    }
+    environment {
+        SonarScannerHome =  tool name: 'SonarQubeScanner'
+        DOTNET_ROLL_FORWARD = 'Major'
+        CI = "true"
+    }
+  stages {
+      
+    stage('Build') {
+        steps{
+             
+            //sh 'npm ci'
+            rtNpmResolver (
+                id: 'NPM',
+                serverId: 'CACI-Artifactory',
+                repo: 'NPM'
+)
+            rtNpmInstall(
+                resolverId: 'NPM'
+            )
+            //TODO: this needs to be fixed in UI code
+            sh 'cp src/appSettings.Development.json src/appSettings.json'
+            withEnv(["CI=false"]){
+                sh 'npm run build'
+            }
+          
+        }
+    }
+    stage('Unit Test'){
+        steps{
+            warnError('npm tests failure'){
+                sh 'npm run test'
+            }
+        }
+    } 
+
+    stage('SonarScan') {
+        steps{
+            withSonarQubeEnv('CACI-sonarqube') { 
+                sh '${SonarScannerHome}/bin/sonar-scanner'
+            }
+        }
+    }
+
+   stage("Quality Gate") {
+        steps {
+            timeout(time: 1, unit: 'HOURS') {
+                withSonarQubeEnv('CACI-sonarqube') { 
+                    warnError('Sonar Quality failure'){
+                        waitForQualityGate abortPipeline: true
+                    }
+                }
+            
+            }
+        }
+    }
+ 
+    stage('Deploy to CI') {
+      steps{
+            sh '''wget https://aka.ms/downloadazcopy-v10-linux 
+tar -xvf downloadazcopy-v10-linux
+apk update && apk add libc6-compat curl
+cp ./azcopy_linux_amd64_*/azcopy /usr/bin/
+'''
+
+            dir('build'){
+                sh 'rm appSettings.json'
+                sh 'mv appSettings.CI.json appSettings.json'
+                withCredentials([string(credentialsId: 'cacichallengeci', variable: 'SAS')]) {
+                    sh 'azcopy copy "*" "https://cacichallengeci.blob.core.usgovcloudapi.net/%24web?$SAS" --recursive'
+                }
+            }
+        }
+    }
+    stage('Deploy to Dev') {
+      steps{
+            dir('build'){
+                sh 'rm appSettings.json'
+                sh 'mv appSettings.Development.json appSettings.json'
+                withCredentials([string(credentialsId: 'cacichallengedev', variable: 'SAS')]) {
+                    sh 'azcopy copy "*" "https://cacichallengedev.blob.core.usgovcloudapi.net/%24web?$SAS" --recursive'
+                }
+            }
+        }
+    }
+    stage('Artifactory Publish'){
+        steps{
+           script{
+                def settings = readJSON file: 'package.json'
+                env.AppVersion = settings.version
+                env.uploadspec = """
+{
+                    "files": [
+                        {
+                        "pattern": "archive/webapp.tgz",
+                        "target": "CACI-BETA/webapp/${settings.version}+${env.BUILD_NUMBER}/"
+                        }
+                    ]
+                }
+                """ 
+            }
+            
+            sh 'mkdir archive'
+            dir("build")
+            {
+                sh 'tar -czvf ../archive/webapp.tgz *'
+            }
+            rtBuildInfo (
+                captureEnv: true       
+            )
+            rtUpload (
+                serverId: 'CACI-Artifactory',
+                spec: "${env.uploadspec}"
+            )
+            rtPublishBuildInfo (
+                serverId: 'CACI-Artifactory'
+            )
+        }
+     
+    }
+  }
+
+}

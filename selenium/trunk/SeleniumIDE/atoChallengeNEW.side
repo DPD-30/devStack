@@ -1,0 +1,138 @@
+{
+  "id": "b2842020-f7da-4554-95c5-314edc070828",
+  "version": "2.0",
+  "name": "atoChallengeNEW",
+  "url": "http://localhost:3000/#/",
+  "tests": [{
+    "id": "14693575-286b-4dc0-a214-62aeb60c7b8f",
+    "name": "expired/LatePage",
+    "commands": [{
+      "id": "d3d72218-d281-4749-aa89-7d51f94873a9",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b0aa3f77-4ef1-4491-b248-50ff17fa9cd3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1261x660",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f36529db-9233-4c22-b052-cf2a58490aa4",
+      "comment": "",
+      "command": "pause",
+      "target": "",
+      "targets": [],
+      "value": "2000"
+    }, {
+      "id": "71f05942-52b0-40bc-9620-d1ad7657cc59",
+      "comment": "",
+      "command": "click",
+      "target": "css=.burger_headerBurger__3B-Rz",
+      "targets": [
+        ["css=.burger_headerBurger__3B-Rz", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5d5eaf73-8ac0-4b50-b7ca-78d8ab687e9e",
+      "comment": "",
+      "command": "pause",
+      "target": "",
+      "targets": [],
+      "value": "2000"
+    }, {
+      "id": "8177047b-b5da-42cd-af48-4d8f96ddd28a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Expired/Late",
+      "targets": [
+        ["linkText=Expired/Late", "linkText"],
+        ["name=expiredAndLate", "name"],
+        ["css=.button_navItemCustom__1JZ7h:nth-child(4) > .button_navLinkCustom__WQ870", "css:finder"],
+        ["xpath=//a[contains(text(),'Expired/Late')]", "xpath:link"],
+        ["xpath=//a[@name='expiredAndLate']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/div/div[2]/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#/expiredAndLate')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Expired/Late')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1af732c5-d677-4d89-9564-bfd20b3e0bb2",
+      "comment": "",
+      "command": "pause",
+      "target": "",
+      "targets": [],
+      "value": "5000"
+    }]
+  }, {
+    "id": "5a259bb8-2580-4c53-8a32-a6f251154c23",
+    "name": "dashboardPage",
+    "commands": [{
+      "id": "ec243248-1ae2-4e16-982e-d8da2ae61967",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/#/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "70c1604f-e704-426d-95bc-7295e5db9e85",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1261x660",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c28fc15b-b6ce-49b2-bc7d-a30257724b72",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa",
+      "targets": [
+        ["css=.fa", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8f8d033c-1a99-4ad3-a63a-85ad8d334eff",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Dashboard",
+      "targets": [
+        ["linkText=Dashboard", "linkText"],
+        ["name=dashboard", "name"],
+        ["css=.button_navItemCustom__1JZ7h:nth-child(3) > .button_navLinkCustom__WQ870", "css:finder"],
+        ["xpath=//a[contains(text(),'Dashboard')]", "xpath:link"],
+        ["xpath=//a[@name='dashboard']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/div/div[2]/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#/dashboard')]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Dashboard')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0d32133b-8d94-4af8-acc8-b68c93919919",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "5a945182-206f-4834-9278-77cd066d30f4",
+    "name": "ato",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["14693575-286b-4dc0-a214-62aeb60c7b8f", "5a259bb8-2580-4c53-8a32-a6f251154c23"]
+  }],
+  "urls": ["http://localhost:3000/#/"],
+  "plugins": []
+}

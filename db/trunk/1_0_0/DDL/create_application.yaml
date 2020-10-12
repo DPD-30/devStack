@@ -1,0 +1,131 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  createTable-Application  
+     author:  Ananda  
+     changes:  
+     -  createTable:  
+          tableName:   Application  
+          columns:  
+            - column:  
+                 name:  ApplicationId  
+                 type:  int identity(1,1)
+                 autoIncrement: true
+                 constraints:
+                   nullable: false  
+            - column:  
+                 name:  ApplicationName
+                 type:  nvarchar(255)
+                 constraints:
+                   nullable: false 
+            - column:  
+                 name:  StatusId
+                 type:  int
+                 constraints:
+                   nullable: false 
+            - column:  
+                 name:  SystemOwner
+                 type:  nvarchar(255)
+                 constraints:
+                   nullable: false 
+            - column:  
+                 name:  IMatrixNumber
+                 type:  nvarchar(255)
+                 constraints:
+                   nullable: true 
+            - column:  
+                 name:  PhaseId
+                 type:  int
+                 constraints:
+                   nullable: false 
+            - column:  
+                 name:  POC
+                 type:  nvarchar(255)
+                 constraints:
+                   nullable: true
+            -  column:  
+                 name:  Expiration  
+                 type:  datetime getdate()
+                 constraints:
+                   nullable: true
+            -  column:  
+                 name:  Icon  
+                 type:  nvarchar(255)
+                 constraints:
+                   nullable: true
+            - column:  
+                 name:  IsActive
+                 type:  bit 
+                 defaultValueBoolean:  true
+                 constraints:
+                   nullable: false
+            -  column:  
+                 name:  IsApproved
+                 type:  bit
+                 defaultValueBoolean:  true
+                 constraints:
+                   nullable: false  
+            -  column:  
+                 name:  CreatedDate
+                 type:  DateTime
+                 defaultValueDate:  getdate()
+                 constraints:
+                   nullable: true 
+            -  column:  
+                 name:  CreatedUser
+                 type:  nvarchar(50)
+                 constraints:
+                   nullable: true 
+            -  column:  
+                 name:  ModifiedDate
+                 type:  DateTime
+                 defaultValueDate:  getdate()
+                 constraints:
+                   nullable: true
+            -  column:  
+                 name:  ModifiedUser
+                 type:  nvarchar(50)
+                 constraints:
+                   nullable: true
+          remarks:  Application  
+          schemaName:  dbo
+-  changeSet:  
+     id:  addPrimaryKey-Application  
+     author:  Ananda
+     changes:  
+     -  addPrimaryKey:  
+         clustered:  true  
+         columnNames:  ApplicationID  
+         constraintName:  PK_Application 
+         schemaName:  dbo
+         tableName:  Application  
+         validate:  true
+-  changeSet:  
+     id:  addForeignKey-FK_Application_Status
+     author:  Ananda 
+     changes:  
+     -  addForeignKeyConstraint:
+          baseColumnNames:  StatusId  
+          baseTableName:  Application  
+          baseTableSchemaName:  dbo
+          constraintName:  FK_Application_StatusId  
+          onDelete:  "CASCADE"  
+          onUpdate:  "CASCADE" 
+          referencedColumnNames:  StatusId 
+          referencedTableName:  Status 
+          referencedTableSchemaName:  dbo
+          validate:  false
+-  changeSet:  
+     id:  addForeignKey-FK_Application_Phase
+     author:  Ananda 
+     changes:  
+     -  addForeignKeyConstraint:
+          baseColumnNames:  PhaseId  
+          baseTableName:  Application  
+          baseTableSchemaName:  dbo
+          constraintName:  FK_Application_PhaseId  
+          onDelete:  "CASCADE"  
+          onUpdate:  "CASCADE" 
+          referencedColumnNames:  PhaseId 
+          referencedTableName:  Phase 
+          referencedTableSchemaName:  dbo
+          validate:  false

@@ -1,0 +1,68 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  createTable-CaseOffice  
+     author:  Ananda  
+     changes:  
+     -  createTable:  
+          tableName:   CaseOffice  
+          columns:  
+            - column:  
+                 name:  CaseOfficeID  
+                 type:  int identity(1,1)
+                 autoIncrement: true
+                 constraints:
+                   nullable: false  
+            - column:  
+                 name:  CaseID
+                 type:  int
+                 constraints:
+                   nullable: false 
+            - column:  
+                 name:  OfficeID
+                 type:  int
+                 constraints:
+                   nullable: false 
+          remarks:  Case Office 
+          schemaName:  inv
+     
+-  changeSet:  
+     id:  addPrimaryKey-CaseOffice  
+     author:  Ananda
+     changes:  
+     -  addPrimaryKey:  
+         clustered:  true  
+         columnNames:  CaseOfficeID  
+         constraintName:  PK_CaseOffice  
+         schemaName:  inv
+         tableName:  CaseOffice  
+         validate:  true
+-  changeSet:  
+     id:  addForeignKey-FK_CaseOffice_Case 
+     author:  Ananda 
+     changes:  
+     -  addForeignKeyConstraint:
+          baseColumnNames:  CaseID  
+          baseTableName:  CaseOffice  
+          baseTableSchemaName:  inv
+          constraintName:  FK_CaseOffice_Case  
+          onDelete:  CASCADE  
+          onUpdate:  RESTRICT  
+          referencedColumnNames:  CaseID 
+          referencedTableName:  Case  
+          referencedTableSchemaName:  inv
+          validate:  true
+     -  changeSet:  
+     id:  addForeignKey-FK_CaseOffice_Office 
+     author:  Ananda 
+     changes:  
+     -  addForeignKeyConstraint:
+          baseColumnNames:  CaseID  
+          baseTableName:  CaseOffice  
+          baseTableSchemaName:  inv
+          constraintName:  FK_CaseOffice_Office  
+          onDelete:  CASCADE  
+          onUpdate:  RESTRICT  
+          referencedColumnNames:  OfficeID 
+          referencedTableName:  Office  
+          referencedTableSchemaName:  inv
+          validate:  true

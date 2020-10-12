@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LayoutMenuIndex should match snapshot 1`] = `
+<nav class="navbar navbar-expand-md bg-dark"
+     data-reactroot
+>
+  <button aria-label="Toggle navigation"
+          type="button"
+          class="mr-2 navbar-toggler"
+  >
+    <span aria-hidden="true"
+          class="fa fa-bars"
+    >
+    </span>
+  </button>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav">
+    </ul>
+  </div>
+</nav>
+`;

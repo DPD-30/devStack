@@ -1,0 +1,23 @@
+ 
+.cardContainer {
+    margin: 25px 25px 25px 25px;
+}
+
+.cardHeader {
+    color:#0275d8;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.errorColor {
+    color: red
+}
+
+.successColor {
+    color: green
+}
+
+.infoStyle {
+    font-size:16px; 
+    margin:0;
+}

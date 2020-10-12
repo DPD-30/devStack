@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LayoutMenuButton should match snapshot 1`] = `
+<li class="nav-item">
+  <a name="mockedMenuButton"
+     class="nav-link"
+     href="#/mocked"
+  >
+    MockLabel
+  </a>
+</li>
+`;
+
+exports[`LayoutMenuButton should match snapshot for active item 1`] = `
+<li class="nav-item">
+  <a name="home"
+     class="nav-link"
+     href="#/home"
+  >
+    Home
+  </a>
+</li>
+`;

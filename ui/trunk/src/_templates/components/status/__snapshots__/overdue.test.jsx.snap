@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Status Overdue matches snapshot 1`] = `
+<span class="badge badge-danger"
+      data-reactroot
+>
+  <span aria-hidden="true"
+        class="fa fa-exclamation"
+  >
+  </span>
+</span>
+`;

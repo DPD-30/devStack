@@ -1,0 +1,25 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "clusterName": {
+            "value": "CACI-AKS-CICD"
+        },
+        "dnsPrefix": {
+            "value": "CACI-AKS-CICD"
+        },
+        "linuxAdminUsername": {
+            "value": "CACIUSER"
+        },
+        "sshRSAPublicKey": {
+            "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDqa3/H7WbeBMypFnnVW3lsZMj5gyoSYzZXYahJ5yj1BewkTDLmAj02ZkM7F7MmWQJh9PS7KBZNgvRVFf7i+1L9tYUTKDDq+jv31Rf6E0/NWjXAV6gZQ8RQgrBpduOk8Q44NKq1CQ5R1WEhMXfH7sEvPMucTbO1NGbplTQA/jOvMNuCJA00zlE/wKNgyX8xw27Bk7G/mNL48NX5VOXZ48opy/CAuXb1gWmeDuSRB/Lz0q8Y9ve/GhavkHm/bQRK6LaU4oYUzCBzLbzJT1w+m6ZjE+Bnnurw7NoPafOhDH3r41Nd4vF15qh6USRBM0hG39Wwav11MoyriMQ8GYZEawGPPAae9H32x/WQ4JBEq9dwq8WbNUyeaS6qV2d3jTuChPzW4z0hV3hJDK0lUie7tweHjrbifK8tYaG4WCCytagBMmfF6QIGSdWqBVxxTLFJh3g3AAs9D5w3hOP9m+pZ7A9Oc1rhY1iO2UCsMpDGFgOjmXRPz+ew4Dmgz5MOz2J++gc= CACIUSER"
+        },
+        "agentVMSize": {
+            "value": "Standard_D4_v3"
+        },
+        "agentCount": {
+            "value": 3
+        }
+
+    }
+}

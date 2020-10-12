@@ -1,0 +1,38 @@
+databaseChangeLog:
+-  changeSet:  
+     id:  createTable-Action  
+     author:  Ananda  
+     changes:  
+     -  createTable:  
+          tableName:   Action  
+          columns:  
+            -  column:  
+                 name:  ActionID  
+                 type:  int identity(1,1)
+                 autoIncrement: true
+                 constraints:
+                   nullable: false  
+            -  column:  
+                 name:  Action
+                 type:  nvarchar(50)
+                 constraints:
+                   nullable: false  
+            -  column:  
+                 name:  Description
+                 type:  nvarchar(200)
+                 constraints:
+                   nullable: false 
+          remarks:  A String  
+          schemaName:  inv
+     
+-  changeSet:  
+     id:  addPrimaryKey-Action  
+     author:  Ananda
+     changes:  
+     -  addPrimaryKey:  
+         clustered:  true  
+         columnNames:  ActionID  
+         constraintName:  PK_Action  
+         schemaName:  inv
+         tableName:  Action  
+         validate:  true

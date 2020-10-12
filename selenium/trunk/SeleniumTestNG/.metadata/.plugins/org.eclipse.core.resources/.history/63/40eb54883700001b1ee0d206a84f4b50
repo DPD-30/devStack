@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+  <parameter name="url" value="http://localhost:3000/#/"/>
+	<parameter name="password" value=""/>
+    <classes>
+      <class name="loginLogout.loginLogout"/>
+      <class name="loginLogout.login"/>
+      <class name="pages.expiredLate"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
